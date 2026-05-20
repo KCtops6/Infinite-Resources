@@ -16,3 +16,7 @@ bin/
 run/
 run-data/
 *.log
+
+generate_tags.bat
+make_models.vbs
+make_subtags.bat
