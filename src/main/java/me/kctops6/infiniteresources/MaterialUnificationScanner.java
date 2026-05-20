@@ -10,6 +10,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.tags.ITag;
 
+import java.util.Objects;
+
 @Mod.EventBusSubscriber(modid = InfiniteResources.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class MaterialUnificationScanner {
     @SubscribeEvent
@@ -18,7 +20,7 @@ public class MaterialUnificationScanner {
             System.out.println("[" + InfiniteResources.MOD_ID + "] Scanning for external duplicate metals...");
             for (String material : ModItems.MATERIALS) {
                 TagKey<Item> ingotTagKey = ItemTags.create(new ResourceLocation("forge", "ingots/" + material));
-                ITag<Item> tag = ForgeRegistries.ITEMS.tags().getTag(ingotTagKey);
+                ITag<Item> tag = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).getTag(ingotTagKey);
                 boolean foundExternalMod = false;
                 if (!tag.isEmpty()) {
                     for (Item item : tag) {

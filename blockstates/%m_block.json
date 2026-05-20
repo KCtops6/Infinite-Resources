@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "infinite_resources:block/%m_block"
+    }
+  }
+}

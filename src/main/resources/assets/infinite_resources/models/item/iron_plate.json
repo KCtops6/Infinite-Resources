@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "infinite_resources:item/iron_plate"
+    "layer0": "infinite_resources:item/template_plate"
   }
 }

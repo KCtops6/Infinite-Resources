@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "infinite_resources:item/brass_dust"
+    "layer0": "infinite_resources:item/template_dust"
   }
 }
