@@ -1,0 +1,66 @@
+{
+  "creativetab.infinite_ingots": "Infinite Resources: Ingots",
+  "creativetab.infinite_nuggets": "Infinite Resources: Nuggets",
+  "creativetab.infinite_dusts": "Infinite Resources: Dusts",
+  "creativetab.infinite_plates": "Infinite Resources: Plates",
+
+  "item.infinite_resources.steel_ingot": "Steel Ingot",
+  "item.infinite_resources.steel_nugget": "Steel Nugget",
+  "item.infinite_resources.steel_dust": "Steel Dust",
+  "item.infinite_resources.steel_plate": "Steel Plate",
+
+  "item.infinite_resources.brass_ingot": "Brass Ingot",
+  "item.infinite_resources.brass_nugget": "Brass Nugget",
+  "item.infinite_resources.brass_dust": "Brass Dust",
+  "item.infinite_resources.brass_plate": "Brass Plate",
+
+  "item.infinite_resources.bronze_ingot": "Bronze Ingot",
+  "item.infinite_resources.bronze_nugget": "Bronze Nugget",
+  "item.infinite_resources.bronze_dust": "Bronze Dust",
+  "item.infinite_resources.bronze_plate": "Bronze Plate",
+
+  "item.infinite_resources.tin_ingot": "Tin Ingot",
+  "item.infinite_resources.tin_nugget": "Tin Nugget",
+  "item.infinite_resources.tin_dust": "Tin Dust",
+  "item.infinite_resources.tin_plate": "Tin Plate",
+
+  "item.infinite_resources.lead_ingot": "Lead Ingot",
+  "item.infinite_resources.lead_nugget": "Lead Nugget",
+  "item.infinite_resources.lead_dust": "Lead Dust",
+  "item.infinite_resources.lead_plate": "Lead Plate",
+
+  "item.infinite_resources.silver_ingot": "Silver Ingot",
+  "item.infinite_resources.silver_nugget": "Silver Nugget",
+  "item.infinite_resources.silver_dust": "Silver Dust",
+  "item.infinite_resources.silver_plate": "Silver Plate",
+
+  "item.infinite_resources.nickel_ingot": "Nickel Ingot",
+  "item.infinite_resources.nickel_nugget": "Nickel Nugget",
+  "item.infinite_resources.nickel_dust": "Nickel Dust",
+  "item.infinite_resources.nickel_plate": "Nickel Plate",
+
+  "item.infinite_resources.aluminum_ingot": "Aluminum Ingot",
+  "item.infinite_resources.aluminum_nugget": "Aluminum Nugget",
+  "item.infinite_resources.aluminum_dust": "Aluminum Dust",
+  "item.infinite_resources.aluminum_plate": "Aluminum Plate",
+
+  "item.infinite_resources.zinc_ingot": "Zinc Ingot",
+  "item.infinite_resources.zinc_nugget": "Zinc Nugget",
+  "item.infinite_resources.zinc_dust": "Zinc Dust",
+  "item.infinite_resources.zinc_plate": "Zinc Plate",
+
+  "item.infinite_resources.invar_ingot": "Invar Ingot",
+  "item.infinite_resources.invar_nugget": "Invar Nugget",
+  "item.infinite_resources.invar_dust": "Invar Dust",
+  "item.infinite_resources.invar_plate": "Invar Plate",
+
+  "item.infinite_resources.electrum_ingot": "Electrum Ingot",
+  "item.infinite_resources.electrum_nugget": "Electrum Nugget",
+  "item.infinite_resources.electrum_dust": "Electrum Dust",
+  "item.infinite_resources.electrum_plate": "Electrum Plate",
+
+  "item.infinite_resources.constantan_ingot": "Constantan Ingot",
+  "item.infinite_resources.constantan_nugget": "Constantan Nugget",
+  "item.infinite_resources.constantan_dust": "Constantan Dust",
+  "item.infinite_resources.constantan_plate": "Constantan Plate"
+}

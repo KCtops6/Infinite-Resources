@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "infinite_resources:constantan_dust"
+    ,"infinite_resources:brass_dust"
+    ,"infinite_resources:steel_dust"
+    ,"infinite_resources:bronze_dust"
+    ,"infinite_resources:electrum_dust"
+    ,"infinite_resources:invar_dust"
+    ,"infinite_resources:lead_dust"
+    ,"infinite_resources:nickel_dust"
+    ,"infinite_resources:silver_dust"
+    ,"infinite_resources:tin_dust"
+    ,"infinite_resources:zinc_dust"
+    ,"infinite_resources:aluminum_dust"
+    ,"infinite_resources:iron_dust"
+    ,"infinite_resources:gold_dust"
+    ,"infinite_resources:diamond_dust"
+    ,"infinite_resources:emerald_dust"
+    ,"infinite_resources:lapis_dust"
+  ]
+}

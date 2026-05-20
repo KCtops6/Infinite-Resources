@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "infinite_resources:constantan_ingot"
+    ,"infinite_resources:brass_ingot"
+    ,"infinite_resources:steel_ingot"
+    ,"infinite_resources:bronze_ingot"
+    ,"infinite_resources:electrum_ingot"
+    ,"infinite_resources:invar_ingot"
+    ,"infinite_resources:lead_ingot"
+    ,"infinite_resources:nickel_ingot"
+    ,"infinite_resources:silver_ingot"
+    ,"infinite_resources:tin_ingot"
+    ,"infinite_resources:zinc_ingot"
+    ,"infinite_resources:aluminum_ingot"
+    ,"infinite_resources:iron_ingot"
+    ,"infinite_resources:gold_ingot"
+    ,"infinite_resources:diamond_ingot"
+    ,"infinite_resources:emerald_ingot"
+    ,"infinite_resources:lapis_ingot"
+  ]
+}
