@@ -6,7 +6,6 @@ import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,30 +22,35 @@ public class JEIPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         List<ItemStack> itemsToHide = new ArrayList<>();
+        String[] forms = {"ingot", "nugget", "dust", "plate", "gear"};
 
         for (String material : ModItems.MATERIALS) {
-            // Check the dynamic configuration system
-            if (!ModConfig.isMaterialEnabled(material)) {
-                // If the material has no external mod equivalents, queue all 4 variants to be hidden
-                if (ModItems.INGOTS.containsKey(material)) {
-                    itemsToHide.add(new ItemStack(ModItems.INGOTS.get(material).get()));
-                }
-                if (ModItems.NUGGETS.containsKey(material)) {
-                    itemsToHide.add(new ItemStack(ModItems.NUGGETS.get(material).get()));
-                }
-                if (ModItems.DUSTS.containsKey(material)) {
-                    itemsToHide.add(new ItemStack(ModItems.DUSTS.get(material).get()));
-                }
-                if (ModItems.PLATES.containsKey(material)) {
-                    itemsToHide.add(new ItemStack(ModItems.PLATES.get(material).get()));
+            for (String form : forms) {
+                // If a user turned off this specific item in the config, hide it!
+                if (!ModConfig.isItemEnabled(material, form)) {
+
+                    if (form.equals("ingot") && ModItems.INGOTS.containsKey(material)) {
+                        itemsToHide.add(new ItemStack(ModItems.INGOTS.get(material).get()));
+                    }
+                    else if (form.equals("nugget") && ModItems.NUGGETS.containsKey(material)) {
+                        itemsToHide.add(new ItemStack(ModItems.NUGGETS.get(material).get()));
+                    }
+                    else if (form.equals("dust") && ModItems.DUSTS.containsKey(material)) {
+                        itemsToHide.add(new ItemStack(ModItems.DUSTS.get(material).get()));
+                    }
+                    else if (form.equals("plate") && ModItems.PLATES.containsKey(material)) {
+                        itemsToHide.add(new ItemStack(ModItems.PLATES.get(material).get()));
+                    }
+                    else if (form.equals("gear") && false) {
+                        // itemsToHide.add(new ItemStack(ModItems.GEARS.get(material).get()));
+                    }
                 }
             }
         }
 
-        // Forcefully hide the compiled list of orphaned items from the JEI layout at runtime
         if (!itemsToHide.isEmpty()) {
             registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, itemsToHide);
-            System.out.println("[" + InfiniteResources.MOD_ID + "] JEI successfully hid " + itemsToHide.size() + " orphaned item forms.");
+            System.out.println("[" + InfiniteResources.MOD_ID + "] JEI successfully hid " + itemsToHide.size() + " config-disabled entries.");
         }
     }
 }

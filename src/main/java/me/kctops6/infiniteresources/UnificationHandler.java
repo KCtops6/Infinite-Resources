@@ -31,23 +31,19 @@ public class UnificationHandler {
 
     private static ItemStack getUnifiedStack(ItemStack originalStack) {
         if (originalStack.isEmpty()) return ItemStack.EMPTY;
-
         Item originalItem = originalStack.getItem();
         ResourceLocation itemKey = ForgeRegistries.ITEMS.getKey(originalItem);
-
-        // Skip tracking completely if the object is native to this mod workspace
         if (itemKey != null && itemKey.getNamespace().equals(InfiniteResources.MOD_ID)) return ItemStack.EMPTY;
 
         String[] forms = {"ingot", "nugget", "dust", "plate"};
 
         for (String material : ModItems.MATERIALS) {
-            if (!ModConfig.isMaterialEnabled(material)) continue;
-
             for (String form : forms) {
-                // Pluralizes the directory naming path for proper Forge tag matching (e.g., "ingot" -> "ingots")
-                String tagPath = form + "s/" + material;
+                // Only unify if this explicit item configuration option is active!
+                if (ModConfig.isItemEnabled(material, form)) continue;
 
-                if (hasTag(originalItem, "forge:" + tagPath)) {
+                String tagLocation = "forge:" + form + "s/" + material;
+                if (hasTag(originalItem, tagLocation)) {
                     Item targetItem = getRegistryItem(material, form);
                     if (targetItem != null) {
                         return new ItemStack(targetItem, originalStack.getCount());
@@ -58,18 +54,18 @@ public class UnificationHandler {
         return ItemStack.EMPTY;
     }
 
+    private static Item getRegistryItem(String material, String form) {
+        switch (form) {
+            case "ingot": return ModItems.INGOTS.containsKey(material) ? ModItems.INGOTS.get(material).get() : null;
+            case "nugget": return ModItems.NUGGETS.containsKey(material) ? ModItems.NUGGETS.get(material).get() : null;
+            case "dust": return ModItems.DUSTS.containsKey(material) ? ModItems.DUSTS.get(material).get() : null;
+            case "plate": return ModItems.PLATES.containsKey(material) ? ModItems.PLATES.get(material).get() : null;
+            default: return null;
+        }
+    }
+
     private static boolean hasTag(Item item, String tagLocation) {
         TagKey<Item> tagKey = ItemTags.create(new ResourceLocation(tagLocation));
         return Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).getTag(tagKey).contains(item);
-    }
-
-    private static Item getRegistryItem(String material, String form) {
-        return switch (form) {
-            case "ingot" -> ModItems.INGOTS.containsKey(material) ? ModItems.INGOTS.get(material).get() : null;
-            case "nugget" -> ModItems.NUGGETS.containsKey(material) ? ModItems.NUGGETS.get(material).get() : null;
-            case "dust" -> ModItems.DUSTS.get(material).get();
-            case "plate" -> ModItems.PLATES.get(material).get();
-            default -> null;
-        };
     }
 }

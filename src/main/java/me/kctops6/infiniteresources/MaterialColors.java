@@ -7,7 +7,11 @@ public class MaterialColors {
     public static final Map<String, Integer> COLORS = new HashMap<>();
 
     static {
-        // Modded materials hex profiles
+        COLORS.put("iron", 0xD8D8D8);
+        COLORS.put("gold", 0xFCE244);
+        COLORS.put("diamond", 0x5CC4C4);
+        COLORS.put("emerald", 0x34C46C);
+        COLORS.put("lapis", 0x2444A4);
         COLORS.put("steel", 0x707070);
         COLORS.put("brass", 0xD6B85C);
         COLORS.put("bronze", 0xAD743E);
@@ -20,12 +24,5 @@ public class MaterialColors {
         COLORS.put("invar", 0xA0A8A0);
         COLORS.put("electrum", 0xDEC464);
         COLORS.put("constantan", 0xCC7C5C);
-
-        // Vanilla material expansions hex profiles
-        COLORS.put("iron", 0xD8D8D8);
-        COLORS.put("gold", 0xFCE244);
-        COLORS.put("diamond", 0x5CC4C4);
-        COLORS.put("emerald", 0x34C46C);
-        COLORS.put("lapis", 0x2444A4);
     }
 }

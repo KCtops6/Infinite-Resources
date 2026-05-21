@@ -4,6 +4,24 @@
   "creativetab.infinite_dusts": "Infinite Resources: Dusts",
   "creativetab.infinite_plates": "Infinite Resources: Plates",
 
+  "item.infinite_resources.iron_dust": "Iron Dust",
+  "item.infinite_resources.iron_plate": "Iron Plate",
+
+  "item.infinite_resources.gold_dust": "Gold Dust",
+  "item.infinite_resources.gold_plate": "Gold Plate",
+
+  "item.infinite_resources.diamond_dust": "Diamond Dust",
+  "item.infinite_resources.diamond_nugget": "Diamond Nugget",
+  "item.infinite_resources.diamond_plate": "Diamond Plate",
+
+  "item.infinite_resources.emerald_dust": "Emerald Dust",
+  "item.infinite_resources.emerald_nugget": "Emerald Nugget",
+  "item.infinite_resources.emerald_plate": "Emerald Plate",
+
+  "item.infinite_resources.lapis_dust": "Lapis Dust",
+  "item.infinite_resources.lapis_nugget": "Lapis Nugget",
+  "item.infinite_resources.lapis_plate": "Lapis Plate",
+
   "item.infinite_resources.steel_ingot": "Steel Ingot",
   "item.infinite_resources.steel_nugget": "Steel Nugget",
   "item.infinite_resources.steel_dust": "Steel Dust",
