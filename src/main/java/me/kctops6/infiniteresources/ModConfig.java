@@ -1,7 +1,6 @@
 package me.kctops6.infiniteresources;
 
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.fml.config.ModConfig.Type;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import java.util.HashMap;
 import java.util.Map;
@@ -11,12 +10,12 @@ public class ModConfig {
     public static final ForgeConfigSpec SPEC;
 
     private static final Map<String, ForgeConfigSpec.BooleanValue> TOGGLES = new HashMap<>();
+    private static final Map<String, ForgeConfigSpec.EnumValue<NuggetStyle>> NUGGET_STYLES = new HashMap<>();
     private static boolean configLoaded = false;
 
     static {
-        BUILDER.comment("Infinite Resources Granular Unification Configuration").push("materials");
+        BUILDER.comment("Infinite Resources Granular Configuration").push("materials");
 
-        // Forms tracked by the mod (including gears)
         String[] forms = {"ingot", "nugget", "dust", "plate", "gear"};
 
         for (String material : ModItems.MATERIALS) {
@@ -24,10 +23,18 @@ public class ModConfig {
             for (String form : forms) {
                 if (isVanillaOmitted(material, form)) continue;
 
-                String compositeKey = material + "_" + form;
-                TOGGLES.put(compositeKey, BUILDER
-                        .comment("Enable/Disable JEI visibility and pickup functionality for: " + material + " " + form)
-                        .define("enable_" + form, true));
+                if (form.equals("nugget")) {
+                    // Create an Enum selection configuration specifically for nuggets
+                    NUGGET_STYLES.put(material, BUILDER
+                            .comment("Texture style selection for " + material + "_nugget. Options: IRON, GOLD, COPPER")
+                            .defineEnum("nugget_texture_style", NuggetStyle.IRON));
+                } else {
+                    // Everything else uses our classic on/off switches
+                    String compositeKey = material + "_" + form;
+                    TOGGLES.put(compositeKey, BUILDER
+                            .comment("Enable/Disable JEI visibility and functionality for: " + material + " " + form)
+                            .define("enable_" + form, true));
+                }
             }
             BUILDER.pop();
         }
@@ -46,7 +53,6 @@ public class ModConfig {
         return false;
     }
 
-    // Listens for Forge's configuration file reading phase to activate the toggles safely
     public static void onConfigLoad(final ModConfigEvent event) {
         if (event.getConfig().getSpec() == SPEC) {
             configLoaded = true;
@@ -54,10 +60,11 @@ public class ModConfig {
     }
 
     public static boolean isItemEnabled(String material, String form) {
-        // SAFETY BYPASS: If Forge hasn't finished reading the TOML file yet,
-        // assume everything is ENABLED so JEI doesn't prematurely hide items!
-        if (!configLoaded) {
-            return true;
+        if (!configLoaded) return true;
+
+        // Nugget visibility is inferred: if it has a style config, it's enabled!
+        if (form.equals("nugget")) {
+            return NUGGET_STYLES.containsKey(material);
         }
 
         String compositeKey = material + "_" + form;
@@ -65,5 +72,12 @@ public class ModConfig {
             return TOGGLES.get(compositeKey).get();
         }
         return true;
+    }
+
+    public static NuggetStyle getNuggetStyle(String material) {
+        if (!configLoaded || !NUGGET_STYLES.containsKey(material)) {
+            return NuggetStyle.IRON; // Default fallback
+        }
+        return NUGGET_STYLES.get(material).get();
     }
 }
