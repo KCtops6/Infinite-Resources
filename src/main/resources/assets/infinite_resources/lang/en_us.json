@@ -1,6 +1,7 @@
 {
   "creativetab.infinite_ingots": "Infinite Resources: Ingots",
   "creativetab.infinite_nuggets": "Infinite Resources: Nuggets",
+  "creativetab.infinite_raw_ores": "Infinite Resources: Raw Ores",
   "creativetab.infinite_dusts": "Infinite Resources: Dusts",
   "creativetab.infinite_plates": "Infinite Resources: Plates",
 
@@ -41,31 +42,37 @@
   "item.infinite_resources.tin_nugget": "Tin Nugget",
   "item.infinite_resources.tin_dust": "Tin Dust",
   "item.infinite_resources.tin_plate": "Tin Plate",
+  "item.infinite_resources.raw_tin": "Raw Tin",
 
   "item.infinite_resources.lead_ingot": "Lead Ingot",
   "item.infinite_resources.lead_nugget": "Lead Nugget",
   "item.infinite_resources.lead_dust": "Lead Dust",
   "item.infinite_resources.lead_plate": "Lead Plate",
+  "item.infinite_resources.raw_lead": "Raw Lead",
 
   "item.infinite_resources.silver_ingot": "Silver Ingot",
   "item.infinite_resources.silver_nugget": "Silver Nugget",
   "item.infinite_resources.silver_dust": "Silver Dust",
   "item.infinite_resources.silver_plate": "Silver Plate",
+  "item.infinite_resources.raw_silver": "Raw Silver",
 
   "item.infinite_resources.nickel_ingot": "Nickel Ingot",
   "item.infinite_resources.nickel_nugget": "Nickel Nugget",
   "item.infinite_resources.nickel_dust": "Nickel Dust",
   "item.infinite_resources.nickel_plate": "Nickel Plate",
+  "item.infinite_resources.raw_nickel": "Raw Nickel",
 
   "item.infinite_resources.aluminum_ingot": "Aluminum Ingot",
   "item.infinite_resources.aluminum_nugget": "Aluminum Nugget",
   "item.infinite_resources.aluminum_dust": "Aluminum Dust",
   "item.infinite_resources.aluminum_plate": "Aluminum Plate",
+  "item.infinite_resources.raw_aluminum": "Raw Aluminum",
 
   "item.infinite_resources.zinc_ingot": "Zinc Ingot",
   "item.infinite_resources.zinc_nugget": "Zinc Nugget",
   "item.infinite_resources.zinc_dust": "Zinc Dust",
   "item.infinite_resources.zinc_plate": "Zinc Plate",
+  "item.infinite_resources.raw_zinc": "Raw Zinc",
 
   "item.infinite_resources.invar_ingot": "Invar Ingot",
   "item.infinite_resources.invar_nugget": "Invar Nugget",

@@ -22,11 +22,11 @@ public class JEIPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         List<ItemStack> itemsToHide = new ArrayList<>();
-        String[] forms = {"ingot", "nugget", "dust", "plate", "gear"};
+        String[] forms = {"ingot", "nugget", "dust", "plate", "gear", "raw"};
 
         for (String material : ModItems.MATERIALS) {
             for (String form : forms) {
-                // If a user turned off this specific item in the config, hide it!
+                // Intercept disabled toggles across all categories
                 if (!ModConfig.isItemEnabled(material, form)) {
 
                     if (form.equals("ingot") && ModItems.INGOTS.containsKey(material)) {
@@ -41,8 +41,9 @@ public class JEIPlugin implements IModPlugin {
                     else if (form.equals("plate") && ModItems.PLATES.containsKey(material)) {
                         itemsToHide.add(new ItemStack(ModItems.PLATES.get(material).get()));
                     }
-                    else if (form.equals("gear") && false) {
-                        // itemsToHide.add(new ItemStack(ModItems.GEARS.get(material).get()));
+                    // Hook ready to hide raw ores dynamically
+                    else if (form.equals("raw") && ModItems.RAW_ORES.containsKey(material)) {
+                        itemsToHide.add(new ItemStack(ModItems.RAW_ORES.get(material).get()));
                     }
                 }
             }

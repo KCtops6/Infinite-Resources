@@ -3,29 +3,26 @@ package me.kctops6.infiniteresources;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.Objects;
+import net.minecraftforge.registries.tags.ITag;
 
 @Mod.EventBusSubscriber(modid = InfiniteResources.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class UnificationHandler {
 
     @SubscribeEvent
-    public static void onItemPickup(PlayerEvent.ItemPickupEvent event) {
-        Player player = event.getEntity();
-        if (player.level().isClientSide) return;
+    public static void onItemPickup(EntityItemPickupEvent event) {
+        ItemEntity itemEntity = event.getItem();
+        ItemStack originalStack = itemEntity.getItem();
+        ItemStack unifiedStack = getUnifiedStack(originalStack);
 
-        ItemStack pickedUpStack = event.getStack();
-        ItemStack unifiedStack = getUnifiedStack(pickedUpStack);
-
-        if (!unifiedStack.isEmpty() && unifiedStack.getItem() != pickedUpStack.getItem()) {
-            event.getOriginalEntity().setItem(unifiedStack);
+        if (!unifiedStack.isEmpty()) {
+            itemEntity.setItem(unifiedStack);
         }
     }
 
@@ -35,14 +32,20 @@ public class UnificationHandler {
         ResourceLocation itemKey = ForgeRegistries.ITEMS.getKey(originalItem);
         if (itemKey != null && itemKey.getNamespace().equals(InfiniteResources.MOD_ID)) return ItemStack.EMPTY;
 
-        String[] forms = {"ingot", "nugget", "dust", "plate"};
+        String[] forms = {"ingot", "nugget", "dust", "plate", "raw"};
 
         for (String material : ModItems.MATERIALS) {
             for (String form : forms) {
-                // Only unify if this explicit item configuration option is active!
-                if (ModConfig.isItemEnabled(material, form)) continue;
+                if (!ModConfig.isItemEnabled(material, form)) continue;
 
-                String tagLocation = "forge:" + form + "s/" + material;
+                // Adjust for standard forge tag formats (e.g. forge:raw_materials/tin)
+                String tagLocation;
+                if (form.equals("raw")) {
+                    tagLocation = "forge:raw_materials/" + material;
+                } else {
+                    tagLocation = "forge:" + form + "s/" + material;
+                }
+
                 if (hasTag(originalItem, tagLocation)) {
                     Item targetItem = getRegistryItem(material, form);
                     if (targetItem != null) {
@@ -54,18 +57,20 @@ public class UnificationHandler {
         return ItemStack.EMPTY;
     }
 
+    private static boolean hasTag(Item item, String tagLocation) {
+        TagKey<Item> tagKey = ItemTags.create(new ResourceLocation(tagLocation));
+        ITag<Item> tag = ForgeRegistries.ITEMS.tags().getTag(tagKey);
+        return !tag.isEmpty() && tag.contains(item);
+    }
+
     private static Item getRegistryItem(String material, String form) {
         switch (form) {
             case "ingot": return ModItems.INGOTS.containsKey(material) ? ModItems.INGOTS.get(material).get() : null;
             case "nugget": return ModItems.NUGGETS.containsKey(material) ? ModItems.NUGGETS.get(material).get() : null;
             case "dust": return ModItems.DUSTS.containsKey(material) ? ModItems.DUSTS.get(material).get() : null;
             case "plate": return ModItems.PLATES.containsKey(material) ? ModItems.PLATES.get(material).get() : null;
+            case "raw": return ModItems.RAW_ORES.containsKey(material) ? ModItems.RAW_ORES.get(material).get() : null;
             default: return null;
         }
-    }
-
-    private static boolean hasTag(Item item, String tagLocation) {
-        TagKey<Item> tagKey = ItemTags.create(new ResourceLocation(tagLocation));
-        return Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).getTag(tagKey).contains(item);
     }
 }

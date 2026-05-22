@@ -22,10 +22,12 @@ public class ClientColorHandler {
             if (ModItems.PLATES.containsKey(material)) {
                 event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.PLATES.get(material).get());
             }
-
-            // Clean uniform tinting on layer0 regardless of which style model was chosen by the configuration redirect
             if (ModItems.NUGGETS.containsKey(material)) {
                 event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.NUGGETS.get(material).get());
+            }
+            // Add dynamic uniform tinting for your new Raw Ores maps
+            if (ModItems.RAW_ORES.containsKey(material)) {
+                event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.RAW_ORES.get(material).get());
             }
         }
     }
