@@ -30,18 +30,20 @@ public class UnificationHandler {
         if (originalStack.isEmpty()) return ItemStack.EMPTY;
         Item originalItem = originalStack.getItem();
         ResourceLocation itemKey = ForgeRegistries.ITEMS.getKey(originalItem);
+
         if (itemKey != null && itemKey.getNamespace().equals(InfiniteResources.MOD_ID)) return ItemStack.EMPTY;
 
-        String[] forms = {"ingot", "nugget", "dust", "plate", "raw"};
+        String[] forms = {"gem", "ingot", "nugget", "dust", "plate", "raw"};
 
         for (String material : ModItems.MATERIALS) {
             for (String form : forms) {
                 if (!ModConfig.isItemEnabled(material, form)) continue;
 
-                // Adjust for standard forge tag formats (e.g. forge:raw_materials/tin)
                 String tagLocation;
                 if (form.equals("raw")) {
                     tagLocation = "forge:raw_materials/" + material;
+                } else if (form.equals("gem")) {
+                    tagLocation = "forge:gems/" + material;
                 } else {
                     tagLocation = "forge:" + form + "s/" + material;
                 }
@@ -65,6 +67,7 @@ public class UnificationHandler {
 
     private static Item getRegistryItem(String material, String form) {
         switch (form) {
+            case "gem": return ModItems.GEMS.containsKey(material) ? ModItems.GEMS.get(material).get() : null;
             case "ingot": return ModItems.INGOTS.containsKey(material) ? ModItems.INGOTS.get(material).get() : null;
             case "nugget": return ModItems.NUGGETS.containsKey(material) ? ModItems.NUGGETS.get(material).get() : null;
             case "dust": return ModItems.DUSTS.containsKey(material) ? ModItems.DUSTS.get(material).get() : null;

@@ -87,5 +87,132 @@
   "item.infinite_resources.constantan_ingot": "Constantan Ingot",
   "item.infinite_resources.constantan_nugget": "Constantan Nugget",
   "item.infinite_resources.constantan_dust": "Constantan Dust",
-  "item.infinite_resources.constantan_plate": "Constantan Plate"
+  "item.infinite_resources.constantan_plate": "Constantan Plate",
+
+  "creativetab.infinite_gems": "Infinite Resources: Gems",
+
+  "item.infinite_resources.ruby_gem": "Ruby",
+  "item.infinite_resources.ruby_nugget": "Ruby Nugget",
+  "item.infinite_resources.ruby_dust": "Ruby Dust",
+  "item.infinite_resources.ruby_plate": "Ruby Plate",
+
+  "item.infinite_resources.sapphire_gem": "Sapphire",
+  "item.infinite_resources.sapphire_nugget": "Sapphire Nugget",
+  "item.infinite_resources.sapphire_dust": "Sapphire Dust",
+  "item.infinite_resources.sapphire_plate": "Sapphire Plate",
+
+  "item.infinite_resources.topaz_gem": "Topaz",
+  "item.infinite_resources.topaz_nugget": "Topaz Nugget",
+  "item.infinite_resources.topaz_dust": "Topaz Dust",
+  "item.infinite_resources.topaz_plate": "Topaz Plate",
+
+  "item.infinite_resources.amethyst_gem": "Amethyst Gem",
+  "item.infinite_resources.amethyst_nugget": "Amethyst Nugget",
+  "item.infinite_resources.amethyst_dust": "Amethyst Dust",
+  "item.infinite_resources.amethyst_plate": "Amethyst Plate",
+
+  "item.infinite_resources.opal_gem": "Opal",
+  "item.infinite_resources.opal_nugget": "Opal Nugget",
+  "item.infinite_resources.opal_dust": "Opal Dust",
+  "item.infinite_resources.opal_plate": "Opal Plate",
+
+  "item.infinite_resources.aquamarine_gem": "Aquamarine",
+  "item.infinite_resources.aquamarine_nugget": "Aquamarine Nugget",
+  "item.infinite_resources.aquamarine_dust": "Aquamarine Dust",
+  "item.infinite_resources.aquamarine_plate": "Aquamarine Plate",
+
+  "item.infinite_resources.peridot_gem": "Peridot",
+  "item.infinite_resources.peridot_nugget": "Peridot Nugget",
+  "item.infinite_resources.peridot_dust": "Peridot Dust",
+  "item.infinite_resources.peridot_plate": "Peridot Plate",
+
+  "item.infinite_resources.garnet_gem": "Garnet",
+  "item.infinite_resources.garnet_nugget": "Garnet Nugget",
+  "item.infinite_resources.garnet_dust": "Garnet Dust",
+  "item.infinite_resources.garnet_plate": "Garnet Plate",
+
+  "item.infinite_resources.jade_gem": "Jade",
+  "item.infinite_resources.jade_nugget": "Jade Nugget",
+  "item.infinite_resources.jade_dust": "Jade Dust",
+  "item.infinite_resources.jade_plate": "Jade Plate",
+
+  "item.infinite_resources.tourmaline_gem": "Tourmaline",
+  "item.infinite_resources.tourmaline_nugget": "Tourmaline Nugget",
+  "item.infinite_resources.tourmaline_dust": "Tourmaline Dust",
+  "item.infinite_resources.tourmaline_plate": "Tourmaline Plate",
+
+  "item.infinite_resources.citrine_gem": "Citrine",
+  "item.infinite_resources.citrine_nugget": "Citrine Nugget",
+  "item.infinite_resources.citrine_dust": "Citrine Dust",
+  "item.infinite_resources.citrine_plate": "Citrine Plate",
+
+  "item.infinite_resources.tanzanite_gem": "Tanzanite",
+  "item.infinite_resources.tanzanite_nugget": "Tanzanite Nugget",
+  "item.infinite_resources.tanzanite_dust": "Tanzanite Dust",
+  "item.infinite_resources.tanzanite_plate": "Tanzanite Plate",
+
+  "item.infinite_resources.amber_gem": "Amber",
+  "item.infinite_resources.amber_nugget": "Amber Nugget",
+  "item.infinite_resources.amber_dust": "Amber Dust",
+  "item.infinite_resources.amber_plate": "Amber Plate",
+
+  "item.infinite_resources.malachite_gem": "Malachite",
+  "item.infinite_resources.malachite_nugget": "Malachite Nugget",
+  "item.infinite_resources.malachite_dust": "Malachite Dust",
+  "item.infinite_resources.malachite_plate": "Malachite Plate",
+
+  "item.infinite_resources.onyx_gem": "Onyx",
+  "item.infinite_resources.onyx_nugget": "Onyx Nugget",
+  "item.infinite_resources.onyx_dust": "Onyx Dust",
+  "item.infinite_resources.onyx_plate": "Onyx Plate",
+
+  "item.infinite_resources.jasper_gem": "Jasper",
+  "item.infinite_resources.jasper_nugget": "Jasper Nugget",
+  "item.infinite_resources.jasper_dust": "Jasper Dust",
+  "item.infinite_resources.jasper_plate": "Jasper Plate",
+
+  "item.infinite_resources.agate_gem": "Agate",
+  "item.infinite_resources.agate_nugget": "Agate Nugget",
+  "item.infinite_resources.agate_dust": "Agate Dust",
+  "item.infinite_resources.agate_plate": "Agate Plate",
+
+  "item.infinite_resources.turquoise_gem": "Turquoise",
+  "item.infinite_resources.turquoise_nugget": "Turquoise Nugget",
+  "item.infinite_resources.turquoise_dust": "Turquoise Dust",
+  "item.infinite_resources.turquoise_plate": "Turquoise Plate",
+
+  "item.infinite_resources.tigerseye_gem": "Tigerseye",
+  "item.infinite_resources.tigerseye_nugget": "Tigerseye Nugget",
+  "item.infinite_resources.tigerseye_dust": "Tigerseye Dust",
+  "item.infinite_resources.tigerseye_plate": "Tigerseye Plate",
+
+  "item.infinite_resources.moonstone_gem": "Moonstone",
+  "item.infinite_resources.moonstone_nugget": "Moonstone Nugget",
+  "item.infinite_resources.moonstone_dust": "Moonstone Dust",
+  "item.infinite_resources.moonstone_plate": "Moonstone Plate",
+
+  "item.infinite_resources.sunstone_gem": "Sunstone",
+  "item.infinite_resources.sunstone_nugget": "Sunstone Nugget",
+  "item.infinite_resources.sunstone_dust": "Sunstone Dust",
+  "item.infinite_resources.sunstone_plate": "Sunstone Plate",
+
+  "item.infinite_resources.morganite_gem": "Morganite",
+  "item.infinite_resources.morganite_nugget": "Morganite Nugget",
+  "item.infinite_resources.morganite_dust": "Morganite Dust",
+  "item.infinite_resources.morganite_plate": "Morganite Plate",
+
+  "item.infinite_resources.iolite_gem": "Iolite",
+  "item.infinite_resources.iolite_nugget": "Iolite Nugget",
+  "item.infinite_resources.iolite_dust": "Iolite Dust",
+  "item.infinite_resources.iolite_plate": "Iolite Plate",
+
+  "item.infinite_resources.alexandrite_gem": "Alexandrite",
+  "item.infinite_resources.alexandrite_nugget": "Alexandrite Nugget",
+  "item.infinite_resources.alexandrite_dust": "Alexandrite Dust",
+  "item.infinite_resources.alexandrite_plate": "Alexandrite Plate",
+
+  "item.infinite_resources.carnelian_gem": "Carnelian",
+  "item.infinite_resources.carnelian_nugget": "Carnelian Nugget",
+  "item.infinite_resources.carnelian_dust": "Carnelian Dust",
+  "item.infinite_resources.carnelian_plate": "Carnelian Plate"
 }

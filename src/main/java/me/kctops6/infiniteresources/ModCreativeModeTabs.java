@@ -12,6 +12,16 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, InfiniteResources.MOD_ID);
 
+    // New dedicated category for pure gems
+    public static final RegistryObject<CreativeModeTab> GEMS_TAB = CREATIVE_MODE_TABS.register("infinite_gems",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.GEMS.get("ruby").get()))
+                    .title(Component.translatable("creativetab.infinite_gems"))
+                    .displayItems((parameters, output) -> {
+                        for (String material : ModItems.MATERIALS) {
+                            if (ModItems.GEMS.containsKey(material)) output.accept(ModItems.GEMS.get(material).get());
+                        }
+                    }).build());
+
     public static final RegistryObject<CreativeModeTab> INGOTS_TAB = CREATIVE_MODE_TABS.register("infinite_ingots",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.INGOTS.get("steel").get()))
                     .title(Component.translatable("creativetab.infinite_ingots"))
@@ -30,16 +40,12 @@ public class ModCreativeModeTabs {
                         }
                     }).build());
 
-    // New standalone creative category specifically for raw ores
     public static final RegistryObject<CreativeModeTab> RAW_ORES_TAB = CREATIVE_MODE_TABS.register("infinite_raw_ores",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RAW_ORES.get("tin").get()))
                     .title(Component.translatable("creativetab.infinite_raw_ores"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            // Automatically cleanly groups only items that possess a raw ore registry mapping
-                            if (ModItems.RAW_ORES.containsKey(material)) {
-                                output.accept(ModItems.RAW_ORES.get(material).get());
-                            }
+                            if (ModItems.RAW_ORES.containsKey(material)) output.accept(ModItems.RAW_ORES.get(material).get());
                         }
                     }).build());
 

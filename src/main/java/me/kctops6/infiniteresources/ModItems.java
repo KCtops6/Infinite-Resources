@@ -20,13 +20,13 @@ public class ModItems {
     public static final Map<String, RegistryObject<Item>> DUSTS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> PLATES = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> RAW_ORES = new HashMap<>();
+    // Store actual gem base items explicitly
+    public static final Map<String, RegistryObject<Item>> GEMS = new HashMap<>();
 
-    // 1. Modded metals that are found naturally as ores in the ground
     public static final String[] MODDED_ORES = {
             "tin", "lead", "silver", "nickel", "aluminum", "zinc"
     };
 
-    // 2. Modded alloys that are crafted/blended (They DO NOT get raw ore items)
     public static final String[] ALLOYS = {
             "steel", "brass", "bronze", "invar", "electrum", "constantan"
     };
@@ -39,41 +39,55 @@ public class ModItems {
             "iron", "gold"
     };
 
+    // Exactly 25 standardized modded gemstone definitions
+    public static final String[] MODDED_GEMS = {
+            "ruby", "sapphire", "topaz", "amethyst", "opal", "aquamarine",
+            "peridot", "garnet", "jade", "tourmaline", "citrine", "tanzanite",
+            "amber", "malachite", "onyx", "jasper", "agate", "turquoise",
+            "tigerseye", "moonstone", "sunstone", "morganite", "iolite", "alexandrite", "carnelian"
+    };
+
     public static final List<String> MATERIALS = new ArrayList<>();
 
     static {
-        // Build master list tracking order
         MATERIALS.addAll(List.of(MODDED_ORES));
         MATERIALS.addAll(List.of(ALLOYS));
+        MATERIALS.addAll(List.of(MODDED_GEMS)); // Add modded gems to loop iterations
         MATERIALS.addAll(List.of(GEMS_WITH_NUGGETS));
         MATERIALS.addAll(List.of(OTHER_VANILLA));
 
-        // Register standard forms for ALL modded metals (Ores + Alloys)
+        // 1. Natural Ores
         for (String material : MODDED_ORES) {
             INGOTS.put(material, ITEMS.register(material + "_ingot", () -> new Item(new Item.Properties())));
             NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
-            // Registers raw ore items ONLY for natural ground ores
             RAW_ORES.put(material, ITEMS.register("raw_" + material, () -> new Item(new Item.Properties())));
         }
 
+        // 2. Crafted Blends
         for (String material : ALLOYS) {
             INGOTS.put(material, ITEMS.register(material + "_ingot", () -> new Item(new Item.Properties())));
             NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
-            // Notice: raw_brass, raw_steel, etc., are completely skipped here!
         }
 
-        // Vanilla Gems: get custom Nuggets, Dusts, and Plates
+        // 3. Modded Gemstones (Gets gem form, custom nuggets, dusts, and plates)
+        for (String material : MODDED_GEMS) {
+            GEMS.put(material, ITEMS.register(material + "_gem", () -> new Item(new Item.Properties())));
+            NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
+            DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
+            PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
+        }
+
+        // 4. Vanilla Core items
         for (String material : GEMS_WITH_NUGGETS) {
             NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
         }
 
-        // Regular Vanilla: get only Dusts and Plates
         for (String material : OTHER_VANILLA) {
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));

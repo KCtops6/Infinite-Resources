@@ -6,6 +6,7 @@ import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,14 +23,16 @@ public class JEIPlugin implements IModPlugin {
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         List<ItemStack> itemsToHide = new ArrayList<>();
-        String[] forms = {"ingot", "nugget", "dust", "plate", "gear", "raw"};
+        String[] forms = {"gem", "ingot", "nugget", "dust", "plate", "raw"};
 
         for (String material : ModItems.MATERIALS) {
             for (String form : forms) {
-                // Intercept disabled toggles across all categories
+                // Read granular per-item configuration options dynamically
                 if (!ModConfig.isItemEnabled(material, form)) {
-
-                    if (form.equals("ingot") && ModItems.INGOTS.containsKey(material)) {
+                    if (form.equals("gem") && ModItems.GEMS.containsKey(material)) {
+                        itemsToHide.add(new ItemStack(ModItems.GEMS.get(material).get()));
+                    }
+                    else if (form.equals("ingot") && ModItems.INGOTS.containsKey(material)) {
                         itemsToHide.add(new ItemStack(ModItems.INGOTS.get(material).get()));
                     }
                     else if (form.equals("nugget") && ModItems.NUGGETS.containsKey(material)) {
@@ -41,7 +44,6 @@ public class JEIPlugin implements IModPlugin {
                     else if (form.equals("plate") && ModItems.PLATES.containsKey(material)) {
                         itemsToHide.add(new ItemStack(ModItems.PLATES.get(material).get()));
                     }
-                    // Hook ready to hide raw ores dynamically
                     else if (form.equals("raw") && ModItems.RAW_ORES.containsKey(material)) {
                         itemsToHide.add(new ItemStack(ModItems.RAW_ORES.get(material).get()));
                     }
@@ -51,7 +53,7 @@ public class JEIPlugin implements IModPlugin {
 
         if (!itemsToHide.isEmpty()) {
             registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, itemsToHide);
-            System.out.println("[" + InfiniteResources.MOD_ID + "] JEI successfully hid " + itemsToHide.size() + " config-disabled entries.");
+            System.out.println("[" + InfiniteResources.MOD_ID + "] JEI successfully hid " + itemsToHide.size() + " config-disabled item variants.");
         }
     }
 }
