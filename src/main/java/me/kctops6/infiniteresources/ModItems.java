@@ -36,7 +36,7 @@ public class ModItems {
     };
 
     public static final String[] OTHER_VANILLA = {
-            "iron", "gold"
+            "iron", "gold", "copper"
     };
 
     // Exactly 25 standardized modded gemstone definitions
