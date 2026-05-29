@@ -1,4 +1,1 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": { "layer0": "infinite_resources:item/template_dust" }
-}
+{"parent": "minecraft:item/generated", "textures": {"layer0": "infinite_resources:item/template_dust"}} 
