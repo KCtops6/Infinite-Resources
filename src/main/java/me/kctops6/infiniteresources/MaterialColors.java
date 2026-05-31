@@ -10,7 +10,7 @@ public class MaterialColors {
         // Base Vanilla Metals & Items
         COLORS.put("iron", 0xD8D8D8); //
         COLORS.put("gold", 0xFCE244); //
-        COLORS.put("copper", 0xbf5935); //
+        COLORS.put("copper", 0xf07500); //
         COLORS.put("diamond", 0x5CC4C4); //
         COLORS.put("emerald", 0x34C46C); //
         COLORS.put("lapis", 0x2444A4); //

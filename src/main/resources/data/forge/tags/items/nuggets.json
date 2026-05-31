@@ -17,6 +17,7 @@
     ,"infinite_resources:gold_nugget"
     ,"infinite_resources:diamond_nugget"
     ,"infinite_resources:emerald_nugget"
-    ,"infinite_resources:lapis_nugget"
+    ,"infinite_resources:lapis_nugget",
+    "infinite_resources:copper_nugget"
   ]
 }

@@ -20,7 +20,6 @@ public class ModItems {
     public static final Map<String, RegistryObject<Item>> DUSTS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> PLATES = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> RAW_ORES = new HashMap<>();
-    // Store actual gem base items explicitly
     public static final Map<String, RegistryObject<Item>> GEMS = new HashMap<>();
 
     public static final String[] MODDED_ORES = {
@@ -91,6 +90,7 @@ public class ModItems {
         for (String material : OTHER_VANILLA) {
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
+            if (material.equals("copper")) NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
         }
     }
 
