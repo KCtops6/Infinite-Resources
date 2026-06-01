@@ -218,5 +218,9 @@
 
   "item.infinite_resources.copper_dust": "Copper Dust",
   "item.infinite_resources.copper_nugget": "Copper Nugget",
-  "item.infinite_resources.copper_plate": "Copper Plate"
+  "item.infinite_resources.copper_plate": "Copper Plate",
+
+  "item.infinite_resources.obsidian_dust": "Obsidian Dust",
+  "item.infinite_resources.obsidian_nugget": "Obsidian Nugget",
+  "item.infinite_resources.obsidian_plate": "Obsidian Plate"
 }

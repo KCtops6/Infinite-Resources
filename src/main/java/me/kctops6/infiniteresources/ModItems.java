@@ -35,7 +35,7 @@ public class ModItems {
     };
 
     public static final String[] OTHER_VANILLA = {
-            "iron", "gold", "copper"
+            "iron", "gold", "copper", "obsidian"
     };
 
     // Exactly 25 standardized modded gemstone definitions
@@ -51,7 +51,7 @@ public class ModItems {
     static {
         MATERIALS.addAll(List.of(MODDED_ORES));
         MATERIALS.addAll(List.of(ALLOYS));
-        MATERIALS.addAll(List.of(MODDED_GEMS)); // Add modded gems to loop iterations
+        MATERIALS.addAll(List.of(MODDED_GEMS));
         MATERIALS.addAll(List.of(GEMS_WITH_NUGGETS));
         MATERIALS.addAll(List.of(OTHER_VANILLA));
 

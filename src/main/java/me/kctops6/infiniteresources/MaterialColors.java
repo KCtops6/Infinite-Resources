@@ -8,12 +8,13 @@ public class MaterialColors {
 
     static {
         // Base Vanilla Metals & Items
-        COLORS.put("iron", 0xD8D8D8); //
-        COLORS.put("gold", 0xFCE244); //
-        COLORS.put("copper", 0xf07500); //
-        COLORS.put("diamond", 0x5CC4C4); //
-        COLORS.put("emerald", 0x34C46C); //
-        COLORS.put("lapis", 0x2444A4); //
+        COLORS.put("iron", 0xD8D8D8);
+        COLORS.put("gold", 0xFCE244);
+        COLORS.put("copper", 0xf07500);
+        COLORS.put("diamond", 0x5CC4C4);
+        COLORS.put("emerald", 0x34C46C);
+        COLORS.put("lapis", 0x2444A4);
+        COLORS.put("obsidian", 0x1e042e);
 
         // Modded Metals & Alloys
         COLORS.put("steel", 0x707070); //
