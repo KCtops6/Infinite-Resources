@@ -222,5 +222,11 @@
 
   "item.infinite_resources.obsidian_dust": "Obsidian Dust",
   "item.infinite_resources.obsidian_nugget": "Obsidian Nugget",
-  "item.infinite_resources.obsidian_plate": "Obsidian Plate"
+  "item.infinite_resources.obsidian_plate": "Obsidian Plate",
+
+  "item.infinite_resources.osmium_dust": "Osmium Dust",
+  "item.infinite_resources.osmium_ingot": "Osmium Ingot",
+  "item.infinite_resources.osmium_nugget": "Osmium Nugget",
+  "item.infinite_resources.osmium_plate": "Osmium Ingot",
+  "item.infinite_resources.raw_osmium": "Raw Osmium"
 }

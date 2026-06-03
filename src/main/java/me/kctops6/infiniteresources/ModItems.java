@@ -23,7 +23,7 @@ public class ModItems {
     public static final Map<String, RegistryObject<Item>> GEMS = new HashMap<>();
 
     public static final String[] MODDED_ORES = {
-            "tin", "lead", "silver", "nickel", "aluminum", "zinc"
+            "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium"
     };
 
     public static final String[] ALLOYS = {

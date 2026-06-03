@@ -17,6 +17,7 @@
     ,"infinite_resources:gold_ingot"
     ,"infinite_resources:diamond_ingot"
     ,"infinite_resources:emerald_ingot"
-    ,"infinite_resources:lapis_ingot"
+    ,"infinite_resources:lapis_ingot",
+    "infinite_resources:osmium_ingot"
   ]
 }
