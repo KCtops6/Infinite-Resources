@@ -12,7 +12,21 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, InfiniteResources.MOD_ID);
 
-    // New dedicated category for pure gems
+    // 1. DEDICATED STORAGE BLOCKS TAB
+    public static final RegistryObject<CreativeModeTab> STORAGE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("infinite_storage_blocks",
+            () -> CreativeModeTab.builder()
+                    .icon(() -> new ItemStack(ModBlocks.STORAGE_BLOCK_ITEMS.get("steel").get())) // Uses Steel Block as the icon
+                    .title(Component.translatable("creativetab.infinite_storage_blocks"))
+                    .displayItems((parameters, output) -> {
+                        // Automatically populates all registered storage blocks in your system loop
+                        for (String material : ModItems.MATERIALS) {
+                            if (ModBlocks.STORAGE_BLOCK_ITEMS.containsKey(material)) {
+                                output.accept(ModBlocks.STORAGE_BLOCK_ITEMS.get(material).get());
+                            }
+                        }
+                    }).build());
+
+    // 2. CLEAN GEMS TAB (Only items now)
     public static final RegistryObject<CreativeModeTab> GEMS_TAB = CREATIVE_MODE_TABS.register("infinite_gems",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.GEMS.get("ruby").get()))
                     .title(Component.translatable("creativetab.infinite_gems"))
@@ -22,6 +36,7 @@ public class ModCreativeModeTabs {
                         }
                     }).build());
 
+    // 3. CLEAN INGOTS TAB (Only items now)
     public static final RegistryObject<CreativeModeTab> INGOTS_TAB = CREATIVE_MODE_TABS.register("infinite_ingots",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.INGOTS.get("steel").get()))
                     .title(Component.translatable("creativetab.infinite_ingots"))
@@ -69,5 +84,15 @@ public class ModCreativeModeTabs {
 
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
+    }
+
+    private static boolean isGemstone(String material) {
+        return material.equals("ruby") || material.equals("sapphire") || material.equals("topaz") || material.equals("amethyst") ||
+                material.equals("opal") || material.equals("aquamarine") || material.equals("peridot") || material.equals("garnet") ||
+                material.equals("jade") || material.equals("tourmaline") || material.equals("citrine") || material.equals("tanzanite") ||
+                material.equals("amber") || material.equals("malachite") || material.equals("onyx") || material.equals("jasper") ||
+                material.equals("agate") || material.equals("turquoise") || material.equals("tigerseye") || material.equals("moonstone") ||
+                material.equals("sunstone") || material.equals("morganite") || material.equals("iolite") || material.equals("alexandrite") ||
+                material.equals("carnelian");
     }
 }

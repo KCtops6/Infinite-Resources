@@ -40,7 +40,7 @@ public class ModItems {
 
     // Exactly 25 standardized modded gemstone definitions
     public static final String[] MODDED_GEMS = {
-            "ruby", "sapphire", "topaz", "amethyst", "opal", "aquamarine",
+            "ruby", "sapphire", "topaz", "opal", "aquamarine",
             "peridot", "garnet", "jade", "tourmaline", "citrine", "tanzanite",
             "amber", "malachite", "onyx", "jasper", "agate", "turquoise",
             "tigerseye", "moonstone", "sunstone", "morganite", "iolite", "alexandrite", "carnelian"

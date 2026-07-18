@@ -21,6 +21,7 @@ public class InfiniteResources {
         modEventBus.addListener(me.kctops6.infiniteresources.ModConfig::onConfigLoad);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
         ModCreativeModeTabs.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
     }

@@ -28,10 +28,25 @@ public class ClientColorHandler {
             if (ModItems.RAW_ORES.containsKey(material)) {
                 event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.RAW_ORES.get(material).get());
             }
-            // Fixes the un-tinted/white gem textures by applying the material color dynamically
             if (ModItems.GEMS.containsKey(material)) {
                 event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.GEMS.get(material).get());
             }
         }
+
+        // --- FIXED STORAGE BLOCK ITEMS (INVENTORY RENDERS) ---
+        ModBlocks.STORAGE_BLOCK_ITEMS.forEach((material, itemObj) -> {
+            int color = MaterialColors.COLORS.getOrDefault(material, 0xFFFFFF);
+            // Enforce layer index checks so base blocks receive layout tints cleanly
+            event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, itemObj.get());
+        });
+    }
+
+    @SubscribeEvent
+    public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+        // --- STORAGE BLOCKS (PLACED IN WORLD) ---
+        ModBlocks.STORAGE_BLOCKS.forEach((material, blockObj) -> {
+            int color = MaterialColors.COLORS.getOrDefault(material, 0xFFFFFF);
+            event.register((state, world, pos, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, blockObj.get());
+        });
     }
 }
