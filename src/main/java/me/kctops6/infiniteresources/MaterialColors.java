@@ -30,6 +30,7 @@ public class MaterialColors {
         COLORS.put("electrum", 0xDEC464); //
         COLORS.put("constantan", 0xCC7C5C); //
         COLORS.put("osmium", 0xbdcdde);
+        COLORS.put("uranium", 0x106402);
 
         // Custom Gemstones (Fixes missing colors making gems render white)
         COLORS.put("ruby", 0xE62E4A);

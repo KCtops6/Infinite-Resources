@@ -228,5 +228,11 @@
   "item.infinite_resources.osmium_ingot": "Osmium Ingot",
   "item.infinite_resources.osmium_nugget": "Osmium Nugget",
   "item.infinite_resources.osmium_plate": "Osmium Ingot",
-  "item.infinite_resources.raw_osmium": "Raw Osmium"
+  "item.infinite_resources.raw_osmium": "Raw Osmium",
+
+  "item.infinite_resources.uranium_dust": "Uranium Dust",
+  "item.infinite_resources.uranium_ingot": "Uranium Ingot",
+  "item.infinite_resources.uranium_nugget": "Uranium Nugget",
+  "item.infinite_resources.uranium_plate": "Uranium Plate",
+  "item.infinite_resources.raw_uranium": "Raw Uranium"
 }
