@@ -1,0 +1,13 @@
+1. Update MaterialColors.java
+2. Update ModItems.java
+3. Update en_us.json
+4. Update models/
+5. Update all tags
+    a. dusts/
+    b. ingots/
+    c. nuggets/
+    d. plates/
+    e. dusts.json
+    f. ingots.json
+    g. nuggets.json
+    h. plates.json
