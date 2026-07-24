@@ -22,7 +22,8 @@ public class ModBlocks {
 
     static {
         // Metals & Alloys List (Matches the script)
-        String[] metals = {"steel", "brass", "bronze", "tin", "lead", "silver", "nickel", "aluminum", "zinc", "invar", "electrum", "constantan", "uranium"};
+        String[] metals = {"steel", "brass", "bronze", "tin", "lead", "silver",
+                "nickel", "aluminum", "zinc", "invar", "electrum", "constantan", "uranium", "lumium", "enderium", "signalum"};
         for (String mat : metals) {
             registerStorageBlock(mat, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK));
         }

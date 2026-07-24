@@ -24,6 +24,9 @@
     "infinite_resources:peridot_dust",
     "infinite_resources:ruby_dust",
     "infinite_resources:sapphire_dust",
-    "infinite_resources:uranium_dust"
+    "infinite_resources:uranium_dust",
+    "infinite_resources:enderium_dust",
+    "infinite_resources:lumium_dust",
+    "infinite_resources:signalum_dust"
   ]
 }

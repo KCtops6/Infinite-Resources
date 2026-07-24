@@ -27,7 +27,7 @@ public class ModItems {
     };
 
     public static final String[] ALLOYS = {
-            "steel", "brass", "bronze", "invar", "electrum", "constantan"
+            "steel", "brass", "bronze", "invar", "electrum", "constantan", "lumium", "signalum", "enderium"
     };
 
     public static final String[] GEMS_WITH_NUGGETS = {

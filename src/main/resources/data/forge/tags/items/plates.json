@@ -21,6 +21,9 @@
     "infinite_resources:copper_plate",
     "infinite_resources:obsidian_plate",
     "infinite_resources:osmium_plate",
-    "infinite_resources:uranium_plate"
+    "infinite_resources:uranium_plate",
+    "infinite_resources:lumium_plate",
+    "infinite_resources:signalum_plate",
+    "infinite_resources:enderium_plate"
   ]
 }
