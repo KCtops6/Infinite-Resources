@@ -22,6 +22,12 @@ public class ModItems {
     public static final Map<String, RegistryObject<Item>> RAW_ORES = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> GEMS = new HashMap<>();
 
+    // New Component Item Maps
+    public static final Map<String, RegistryObject<Item>> RODS = new HashMap<>();
+    public static final Map<String, RegistryObject<Item>> WIRES = new HashMap<>();
+    public static final Map<String, RegistryObject<Item>> GEARS = new HashMap<>();
+    public static final Map<String, RegistryObject<Item>> DOUBLE_PLATES = new HashMap<>();
+
     public static final String[] MODDED_ORES = {
             "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium", "uranium"
     };
@@ -91,6 +97,19 @@ public class ModItems {
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
             if (material.equals("copper")) NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
+        }
+
+        // 5. Rods, Wires, Gears, and Double Plates (MODDED_ORES, ALLOYS, OTHER_VANILLA)
+        List<String> metalMaterials = new ArrayList<>();
+        metalMaterials.addAll(List.of(MODDED_ORES));
+        metalMaterials.addAll(List.of(ALLOYS));
+        metalMaterials.addAll(List.of(OTHER_VANILLA));
+
+        for (String material : metalMaterials) {
+            RODS.put(material, ITEMS.register(material + "_rod", () -> new Item(new Item.Properties())));
+            WIRES.put(material, ITEMS.register(material + "_wire", () -> new Item(new Item.Properties())));
+            GEARS.put(material, ITEMS.register(material + "_gear", () -> new Item(new Item.Properties())));
+            DOUBLE_PLATES.put(material, ITEMS.register("double_" + material + "_plate", () -> new Item(new Item.Properties())));
         }
     }
 

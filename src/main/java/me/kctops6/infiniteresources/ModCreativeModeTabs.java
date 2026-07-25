@@ -12,21 +12,6 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, InfiniteResources.MOD_ID);
 
-    // 1. DEDICATED STORAGE BLOCKS TAB
-    public static final RegistryObject<CreativeModeTab> STORAGE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("infinite_storage_blocks",
-            () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModBlocks.STORAGE_BLOCK_ITEMS.get("steel").get())) // Uses Steel Block as the icon
-                    .title(Component.translatable("creativetab.infinite_storage_blocks"))
-                    .displayItems((parameters, output) -> {
-                        // Automatically populates all registered storage blocks in your system loop
-                        for (String material : ModItems.MATERIALS) {
-                            if (ModBlocks.STORAGE_BLOCK_ITEMS.containsKey(material)) {
-                                output.accept(ModBlocks.STORAGE_BLOCK_ITEMS.get(material).get());
-                            }
-                        }
-                    }).build());
-
-    // 2. CLEAN GEMS TAB (Only items now)
     public static final RegistryObject<CreativeModeTab> GEMS_TAB = CREATIVE_MODE_TABS.register("infinite_gems",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.GEMS.get("ruby").get()))
                     .title(Component.translatable("creativetab.infinite_gems"))
@@ -36,13 +21,15 @@ public class ModCreativeModeTabs {
                         }
                     }).build());
 
-    // 3. CLEAN INGOTS TAB (Only items now)
     public static final RegistryObject<CreativeModeTab> INGOTS_TAB = CREATIVE_MODE_TABS.register("infinite_ingots",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.INGOTS.get("steel").get()))
                     .title(Component.translatable("creativetab.infinite_ingots"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
                             if (ModItems.INGOTS.containsKey(material)) output.accept(ModItems.INGOTS.get(material).get());
+                            if (ModBlocks.STORAGE_BLOCK_ITEMS.containsKey(material) && !isGemstone(material)) {
+                                output.accept(ModBlocks.STORAGE_BLOCK_ITEMS.get(material).get());
+                            }
                         }
                     }).build());
 
@@ -79,6 +66,42 @@ public class ModCreativeModeTabs {
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
                             if (ModItems.PLATES.containsKey(material)) output.accept(ModItems.PLATES.get(material).get());
+                        }
+                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> RODS_TAB = CREATIVE_MODE_TABS.register("infinite_rods",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RODS.get("steel").get()))
+                    .title(Component.translatable("creativetab.infinite_rods"))
+                    .displayItems((parameters, output) -> {
+                        for (String material : ModItems.MATERIALS) {
+                            if (ModItems.RODS.containsKey(material)) output.accept(ModItems.RODS.get(material).get());
+                        }
+                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> WIRES_TAB = CREATIVE_MODE_TABS.register("infinite_wires",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.WIRES.get("steel").get()))
+                    .title(Component.translatable("creativetab.infinite_wires"))
+                    .displayItems((parameters, output) -> {
+                        for (String material : ModItems.MATERIALS) {
+                            if (ModItems.WIRES.containsKey(material)) output.accept(ModItems.WIRES.get(material).get());
+                        }
+                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> GEARS_TAB = CREATIVE_MODE_TABS.register("infinite_gears",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.GEARS.get("steel").get()))
+                    .title(Component.translatable("creativetab.infinite_gears"))
+                    .displayItems((parameters, output) -> {
+                        for (String material : ModItems.MATERIALS) {
+                            if (ModItems.GEARS.containsKey(material)) output.accept(ModItems.GEARS.get(material).get());
+                        }
+                    }).build());
+
+    public static final RegistryObject<CreativeModeTab> DOUBLE_PLATES_TAB = CREATIVE_MODE_TABS.register("infinite_double_plates",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.DOUBLE_PLATES.get("steel").get()))
+                    .title(Component.translatable("creativetab.infinite_double_plates"))
+                    .displayItems((parameters, output) -> {
+                        for (String material : ModItems.MATERIALS) {
+                            if (ModItems.DOUBLE_PLATES.containsKey(material)) output.accept(ModItems.DOUBLE_PLATES.get(material).get());
                         }
                     }).build());
 

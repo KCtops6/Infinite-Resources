@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "infinite_resources:tin_wire",
+    "infinite_resources:lead_wire",
+    "infinite_resources:silver_wire",
+    "infinite_resources:nickel_wire",
+    "infinite_resources:aluminum_wire",
+    "infinite_resources:zinc_wire",
+    "infinite_resources:osmium_wire",
+    "infinite_resources:uranium_wire",
+    "infinite_resources:steel_wire",
+    "infinite_resources:brass_wire",
+    "infinite_resources:bronze_wire",
+    "infinite_resources:invar_wire",
+    "infinite_resources:electrum_wire",
+    "infinite_resources:constantan_wire",
+    "infinite_resources:lumium_wire",
+    "infinite_resources:signalum_wire",
+    "infinite_resources:enderium_wire",
+    "infinite_resources:iron_wire",
+    "infinite_resources:gold_wire",
+    "infinite_resources:copper_wire",
+    "infinite_resources:obsidian_wire"
+  ]
+}

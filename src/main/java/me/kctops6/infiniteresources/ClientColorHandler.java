@@ -31,19 +31,27 @@ public class ClientColorHandler {
             if (ModItems.GEMS.containsKey(material)) {
                 event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.GEMS.get(material).get());
             }
+            if (ModItems.RODS.containsKey(material)) {
+                event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.RODS.get(material).get());
+            }
+            if (ModItems.WIRES.containsKey(material)) {
+                event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.WIRES.get(material).get());
+            }
+            if (ModItems.GEARS.containsKey(material)) {
+                event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.GEARS.get(material).get());
+            }
+            if (ModItems.DOUBLE_PLATES.containsKey(material)) {
+                event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.DOUBLE_PLATES.get(material).get());
+            }
         }
-
-        // --- FIXED STORAGE BLOCK ITEMS (INVENTORY RENDERS) ---
         ModBlocks.STORAGE_BLOCK_ITEMS.forEach((material, itemObj) -> {
             int color = MaterialColors.COLORS.getOrDefault(material, 0xFFFFFF);
-            // Enforce layer index checks so base blocks receive layout tints cleanly
-            event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, itemObj.get());
+            event.register((stack, tintIndex) -> color, itemObj.get());
         });
     }
 
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
-        // --- STORAGE BLOCKS (PLACED IN WORLD) ---
         ModBlocks.STORAGE_BLOCKS.forEach((material, blockObj) -> {
             int color = MaterialColors.COLORS.getOrDefault(material, 0xFFFFFF);
             event.register((state, world, pos, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, blockObj.get());
