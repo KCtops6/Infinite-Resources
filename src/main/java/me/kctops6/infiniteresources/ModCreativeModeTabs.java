@@ -17,7 +17,12 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_gems"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            if (ModItems.GEMS.containsKey(material)) output.accept(ModItems.GEMS.get(material).get());
+                            if (ModItems.GEMS.containsKey(material)) {
+                                output.accept(ModItems.GEMS.get(material).get());
+                            }
+                            if (ModBlocks.STORAGE_BLOCK_ITEMS.containsKey(material) && isGemstone(material)) {
+                                output.accept(ModBlocks.STORAGE_BLOCK_ITEMS.get(material).get());
+                            }
                         }
                     }).build());
 
@@ -26,11 +31,15 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_ingots"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            if (ModItems.INGOTS.containsKey(material)) output.accept(ModItems.INGOTS.get(material).get());
+                            if (ModItems.INGOTS.containsKey(material)) {
+                                output.accept(ModItems.INGOTS.get(material).get());
+                            }
                             if (ModBlocks.STORAGE_BLOCK_ITEMS.containsKey(material) && !isGemstone(material)) {
                                 output.accept(ModBlocks.STORAGE_BLOCK_ITEMS.get(material).get());
                             }
                         }
+                        output.accept(ModItems.COAL_COKE.get());
+                        output.accept(ModBlocks.COAL_COKE_BLOCK_ITEM.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> NUGGETS_TAB = CREATIVE_MODE_TABS.register("infinite_nuggets",
@@ -38,7 +47,9 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_nuggets"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            if (ModItems.NUGGETS.containsKey(material)) output.accept(ModItems.NUGGETS.get(material).get());
+                            if (ModItems.NUGGETS.containsKey(material)) {
+                                output.accept(ModItems.NUGGETS.get(material).get());
+                            }
                         }
                     }).build());
 
@@ -47,7 +58,9 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_raw_ores"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            if (ModItems.RAW_ORES.containsKey(material)) output.accept(ModItems.RAW_ORES.get(material).get());
+                            if (ModItems.RAW_ORES.containsKey(material)) {
+                                output.accept(ModItems.RAW_ORES.get(material).get());
+                            }
                         }
                     }).build());
 
@@ -56,7 +69,9 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_dusts"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            if (ModItems.DUSTS.containsKey(material)) output.accept(ModItems.DUSTS.get(material).get());
+                            if (ModItems.DUSTS.containsKey(material)) {
+                                output.accept(ModItems.DUSTS.get(material).get());
+                            }
                         }
                     }).build());
 
@@ -65,7 +80,9 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_plates"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            if (ModItems.PLATES.containsKey(material)) output.accept(ModItems.PLATES.get(material).get());
+                            if (ModItems.PLATES.containsKey(material)) {
+                                output.accept(ModItems.PLATES.get(material).get());
+                            }
                         }
                     }).build());
 
@@ -74,7 +91,9 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_rods"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            if (ModItems.RODS.containsKey(material)) output.accept(ModItems.RODS.get(material).get());
+                            if (ModItems.RODS.containsKey(material)) {
+                                output.accept(ModItems.RODS.get(material).get());
+                            }
                         }
                     }).build());
 
@@ -83,7 +102,9 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_wires"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            if (ModItems.WIRES.containsKey(material)) output.accept(ModItems.WIRES.get(material).get());
+                            if (ModItems.WIRES.containsKey(material)) {
+                                output.accept(ModItems.WIRES.get(material).get());
+                            }
                         }
                     }).build());
 
@@ -92,7 +113,9 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_gears"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            if (ModItems.GEARS.containsKey(material)) output.accept(ModItems.GEARS.get(material).get());
+                            if (ModItems.GEARS.containsKey(material)) {
+                                output.accept(ModItems.GEARS.get(material).get());
+                            }
                         }
                     }).build());
 
@@ -101,7 +124,9 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_double_plates"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
-                            if (ModItems.DOUBLE_PLATES.containsKey(material)) output.accept(ModItems.DOUBLE_PLATES.get(material).get());
+                            if (ModItems.DOUBLE_PLATES.containsKey(material)) {
+                                output.accept(ModItems.DOUBLE_PLATES.get(material).get());
+                            }
                         }
                     }).build());
 
@@ -110,12 +135,9 @@ public class ModCreativeModeTabs {
     }
 
     private static boolean isGemstone(String material) {
-        return material.equals("ruby") || material.equals("sapphire") || material.equals("topaz") || material.equals("amethyst") ||
-                material.equals("opal") || material.equals("aquamarine") || material.equals("peridot") || material.equals("garnet") ||
-                material.equals("jade") || material.equals("tourmaline") || material.equals("citrine") || material.equals("tanzanite") ||
-                material.equals("amber") || material.equals("malachite") || material.equals("onyx") || material.equals("jasper") ||
-                material.equals("agate") || material.equals("turquoise") || material.equals("tigerseye") || material.equals("moonstone") ||
-                material.equals("sunstone") || material.equals("morganite") || material.equals("iolite") || material.equals("alexandrite") ||
-                material.equals("carnelian");
+        for (String gem : ModItems.MODDED_GEMS) {
+            if (gem.equals(material)) return true;
+        }
+        return false;
     }
 }

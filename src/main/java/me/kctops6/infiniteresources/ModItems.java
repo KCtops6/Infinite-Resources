@@ -15,19 +15,23 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, InfiniteResources.MOD_ID);
 
+    // Dynamic Item Maps
     public static final Map<String, RegistryObject<Item>> INGOTS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> NUGGETS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> DUSTS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> PLATES = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> RAW_ORES = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> GEMS = new HashMap<>();
-
-    // New Component Item Maps
     public static final Map<String, RegistryObject<Item>> RODS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> WIRES = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> GEARS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> DOUBLE_PLATES = new HashMap<>();
 
+    // Individual Special Items
+    public static final RegistryObject<Item> COAL_COKE = ITEMS.register("coal_coke",
+            () -> new Item(new Item.Properties()));
+
+    // Material Definitions
     public static final String[] MODDED_ORES = {
             "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium", "uranium"
     };
@@ -44,7 +48,6 @@ public class ModItems {
             "iron", "gold", "copper", "obsidian"
     };
 
-    // Exactly 25 standardized modded gemstone definitions
     public static final String[] MODDED_GEMS = {
             "ruby", "sapphire", "topaz", "opal", "aquamarine",
             "peridot", "garnet", "jade", "tourmaline", "citrine", "tanzanite",
@@ -70,7 +73,7 @@ public class ModItems {
             RAW_ORES.put(material, ITEMS.register("raw_" + material, () -> new Item(new Item.Properties())));
         }
 
-        // 2. Crafted Blends
+        // 2. Crafted Alloys
         for (String material : ALLOYS) {
             INGOTS.put(material, ITEMS.register(material + "_ingot", () -> new Item(new Item.Properties())));
             NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
@@ -78,7 +81,7 @@ public class ModItems {
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
         }
 
-        // 3. Modded Gemstones (Gets gem form, custom nuggets, dusts, and plates)
+        // 3. Modded Gemstones
         for (String material : MODDED_GEMS) {
             GEMS.put(material, ITEMS.register(material + "_gem", () -> new Item(new Item.Properties())));
             NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
@@ -96,10 +99,12 @@ public class ModItems {
         for (String material : OTHER_VANILLA) {
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
-            if (material.equals("copper")) NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
+            if (material.equals("copper")) {
+                NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
+            }
         }
 
-        // 5. Rods, Wires, Gears, and Double Plates (MODDED_ORES, ALLOYS, OTHER_VANILLA)
+        // 5. Rods, Wires, Gears, and Double Plates (Ores, Alloys, Other Vanilla)
         List<String> metalMaterials = new ArrayList<>();
         metalMaterials.addAll(List.of(MODDED_ORES));
         metalMaterials.addAll(List.of(ALLOYS));

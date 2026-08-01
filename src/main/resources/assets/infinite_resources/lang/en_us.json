@@ -385,5 +385,9 @@
   "item.infinite_resources.double_iron_plate": "Double Iron Plate",
   "item.infinite_resources.double_gold_plate": "Double Gold Plate",
   "item.infinite_resources.double_copper_plate": "Double Copper Plate",
-  "item.infinite_resources.double_obsidian_plate": "Double Obsidian Plate"
+  "item.infinite_resources.double_obsidian_plate": "Double Obsidian Plate",
+
+  "item.infinite_resources.coal_coke": "Coal Coke",
+  "block.infinite_resources.coal_coke_block": "Coal Coke Block",
+  "item.infinite_resources.coal_coke_block": "Coal Coke Block"
 }

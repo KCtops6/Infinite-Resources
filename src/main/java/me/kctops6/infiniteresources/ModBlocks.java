@@ -10,39 +10,54 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ModBlocks {
-    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, InfiniteResources.MOD_ID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, InfiniteResources.MOD_ID);
+    public static final DeferredRegister<Block> BLOCKS =
+            DeferredRegister.create(ForgeRegistries.BLOCKS, InfiniteResources.MOD_ID);
 
     public static final Map<String, RegistryObject<Block>> STORAGE_BLOCKS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> STORAGE_BLOCK_ITEMS = new HashMap<>();
 
+    // Coal Coke Block
+    public static final RegistryObject<Block> COAL_COKE_BLOCK = BLOCKS.register("coal_coke_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK)));
+
+    public static final RegistryObject<Item> COAL_COKE_BLOCK_ITEM = ModItems.ITEMS.register("coal_coke_block",
+            () -> new BlockItem(COAL_COKE_BLOCK.get(), new Item.Properties()));
+
     static {
-        // Metals & Alloys List (Matches the script)
-        String[] metals = {"steel", "brass", "bronze", "tin", "lead", "silver",
-                "nickel", "aluminum", "zinc", "invar", "electrum", "constantan", "uranium", "lumium", "enderium", "signalum"};
-        for (String mat : metals) {
-            registerStorageBlock(mat, BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK));
+        // Register Storage Blocks for Metals and Alloys (Iron Properties)
+        List<String> metalsAndAlloys = new ArrayList<>();
+        metalsAndAlloys.addAll(List.of(ModItems.MODDED_ORES));
+        metalsAndAlloys.addAll(List.of(ModItems.ALLOYS));
+
+        for (String material : metalsAndAlloys) {
+            RegistryObject<Block> block = BLOCKS.register(material + "_block",
+                    () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            STORAGE_BLOCKS.put(material, block);
+
+            RegistryObject<Item> blockItem = ModItems.ITEMS.register(material + "_block",
+                    () -> new BlockItem(block.get(), new Item.Properties()));
+            STORAGE_BLOCK_ITEMS.put(material, blockItem);
         }
 
-        // Gemstones List (Matches the script)
-        String[] gems = {"ruby", "sapphire", "topaz", "opal", "aquamarine", "peridot", "garnet", "jade", "tourmaline", "citrine", "tanzanite", "amber", "malachite", "onyx", "jasper", "agate", "turquoise", "tigerseye", "moonstone", "sunstone", "morganite", "iolite", "alexandrite", "carnelian"};
-        for (String gem : gems) {
-            registerStorageBlock(gem, BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK));
-        }
-    }
+        // Register Storage Blocks for Gemstones (Diamond Properties)
+        for (String material : ModItems.MODDED_GEMS) {
+            RegistryObject<Block> block = BLOCKS.register(material + "_block",
+                    () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
+            STORAGE_BLOCKS.put(material, block);
 
-    private static void registerStorageBlock(String name, BlockBehaviour.Properties properties) {
-        RegistryObject<Block> block = BLOCKS.register(name + "_block", () -> new Block(properties));
-        STORAGE_BLOCKS.put(name, block);
-        STORAGE_BLOCK_ITEMS.put(name, ITEMS.register(name + "_block", () -> new BlockItem(block.get(), new Item.Properties())));
+            RegistryObject<Item> blockItem = ModItems.ITEMS.register(material + "_block",
+                    () -> new BlockItem(block.get(), new Item.Properties()));
+            STORAGE_BLOCK_ITEMS.put(material, blockItem);
+        }
     }
 
     public static void register(IEventBus eventBus) {
         BLOCKS.register(eventBus);
-        ITEMS.register(eventBus);
     }
 }

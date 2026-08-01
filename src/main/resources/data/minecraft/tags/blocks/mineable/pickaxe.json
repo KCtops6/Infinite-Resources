@@ -37,6 +37,7 @@
     "infinite_resources:morganite_block",
     "infinite_resources:iolite_block",
     "infinite_resources:alexandrite_block",
-    "infinite_resources:carnelian_block"
+    "infinite_resources:carnelian_block",
+    "infinite_resources:coal_coke_block"
   ]
 }
