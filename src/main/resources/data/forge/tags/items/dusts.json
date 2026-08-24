@@ -27,6 +27,7 @@
     "infinite_resources:uranium_dust",
     "infinite_resources:enderium_dust",
     "infinite_resources:lumium_dust",
-    "infinite_resources:signalum_dust"
+    "infinite_resources:signalum_dust",
+    "infinite_resources:coal_dust"
   ]
 }

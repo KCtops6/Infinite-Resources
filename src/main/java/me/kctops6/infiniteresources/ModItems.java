@@ -45,7 +45,7 @@ public class ModItems {
     };
 
     public static final String[] OTHER_VANILLA = {
-            "iron", "gold", "copper", "obsidian"
+            "iron", "gold", "copper", "obsidian", "coal"
     };
 
     public static final String[] MODDED_GEMS = {
@@ -97,20 +97,30 @@ public class ModItems {
         }
 
         for (String material : OTHER_VANILLA) {
+            // Coal dust is registered here
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
-            PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
+
+            // Skip plates and nuggets for coal
+            if (!material.equals("coal")) {
+                PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
+            }
             if (material.equals("copper")) {
                 NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
             }
         }
 
-        // 5. Rods, Wires, Gears, and Double Plates (Ores, Alloys, Other Vanilla)
+        // 5. Rods, Wires, Gears, and Double Plates
         List<String> metalMaterials = new ArrayList<>();
         metalMaterials.addAll(List.of(MODDED_ORES));
         metalMaterials.addAll(List.of(ALLOYS));
         metalMaterials.addAll(List.of(OTHER_VANILLA));
 
         for (String material : metalMaterials) {
+            // Skip rods, wires, gears, and double plates for coal
+            if (material.equals("coal")) {
+                continue;
+            }
+
             RODS.put(material, ITEMS.register(material + "_rod", () -> new Item(new Item.Properties())));
             WIRES.put(material, ITEMS.register(material + "_wire", () -> new Item(new Item.Properties())));
             GEARS.put(material, ITEMS.register(material + "_gear", () -> new Item(new Item.Properties())));
