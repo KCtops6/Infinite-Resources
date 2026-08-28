@@ -21,6 +21,9 @@
     "infinite_resources:iron_gear",
     "infinite_resources:gold_gear",
     "infinite_resources:copper_gear",
-    "infinite_resources:obsidian_gear"
+    "infinite_resources:obsidian_gear",
+    "infinite_resources:diamond_gear",
+    "infinite_resources:lapis_gear",
+    "infinite_resources:emerald_gear"
   ]
 }

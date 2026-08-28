@@ -391,5 +391,9 @@
   "block.infinite_resources.coal_coke_block": "Coal Coke Block",
   "item.infinite_resources.coal_coke_block": "Coal Coke Block",
 
-  "item.infinite_resources.coal_dust": "Coal Dust"
+  "item.infinite_resources.coal_dust": "Coal Dust",
+
+  "item.infinite_resources.diamond_gear": "Diamond Gear",
+  "item.infinite_resources.emerald_gear": "Emerald Gear",
+  "item.infinite_resources.lapis_gear": "Lapis Gear"
 }

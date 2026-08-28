@@ -94,6 +94,7 @@ public class ModItems {
             NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
+            GEARS.put(material, ITEMS.register(material + "_gear", () -> new Item(new Item.Properties())));
         }
 
         for (String material : OTHER_VANILLA) {
