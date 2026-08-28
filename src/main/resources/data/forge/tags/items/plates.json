@@ -24,6 +24,7 @@
     "infinite_resources:uranium_plate",
     "infinite_resources:lumium_plate",
     "infinite_resources:signalum_plate",
-    "infinite_resources:enderium_plate"
+    "infinite_resources:enderium_plate",
+    "infinite_resources:netherite_plate"
   ]
 }

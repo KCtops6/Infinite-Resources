@@ -24,6 +24,7 @@
     "infinite_resources:obsidian_gear",
     "infinite_resources:diamond_gear",
     "infinite_resources:lapis_gear",
-    "infinite_resources:emerald_gear"
+    "infinite_resources:emerald_gear",
+    "infinite_resources:netherite_gear"
   ]
 }

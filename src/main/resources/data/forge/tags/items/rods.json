@@ -21,6 +21,7 @@
     "infinite_resources:iron_rod",
     "infinite_resources:gold_rod",
     "infinite_resources:copper_rod",
-    "infinite_resources:obsidian_rod"
+    "infinite_resources:obsidian_rod",
+    "infinite_resources:netherite_rod"
   ]
 }

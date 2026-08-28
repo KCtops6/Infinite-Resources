@@ -21,6 +21,7 @@
     "infinite_resources:double_iron_plate",
     "infinite_resources:double_gold_plate",
     "infinite_resources:double_copper_plate",
-    "infinite_resources:double_obsidian_plate"
+    "infinite_resources:double_obsidian_plate",
+    "infinite_resources:double_netherite_plate"
   ]
 }

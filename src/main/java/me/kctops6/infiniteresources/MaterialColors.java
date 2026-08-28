@@ -16,6 +16,7 @@ public class MaterialColors {
         COLORS.put("lapis", 0x2444A4);
         COLORS.put("obsidian", 0x1e042e);
         COLORS.put("coal", 0x4A4A4A);
+        COLORS.put("netherite", 0x433d40);
 
         // Modded Metals & Alloys
         COLORS.put("steel", 0x707070); //

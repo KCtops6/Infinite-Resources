@@ -395,5 +395,12 @@
 
   "item.infinite_resources.diamond_gear": "Diamond Gear",
   "item.infinite_resources.emerald_gear": "Emerald Gear",
-  "item.infinite_resources.lapis_gear": "Lapis Gear"
+  "item.infinite_resources.lapis_gear": "Lapis Gear",
+
+  "item.infinite_resources.netherite_dust": "Netherite Dust",
+  "item.infinite_resources.netherite_plate": "Netherite Plate",
+  "item.infinite_resources.netherite_rod": "Netherite Rod",
+  "item.infinite_resources.netherite_wire": "Netherite Wire",
+  "item.infinite_resources.netherite_gear": "Netherite Gear",
+  "item.infinite_resources.double_netherite_plate": "Double Netherite Plate"
 }

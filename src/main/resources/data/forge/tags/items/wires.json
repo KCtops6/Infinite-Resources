@@ -21,6 +21,7 @@
     "infinite_resources:iron_wire",
     "infinite_resources:gold_wire",
     "infinite_resources:copper_wire",
-    "infinite_resources:obsidian_wire"
+    "infinite_resources:obsidian_wire",
+    "infinite_resources:netherite_wire"
   ]
 }

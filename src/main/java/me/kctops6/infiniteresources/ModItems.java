@@ -45,7 +45,7 @@ public class ModItems {
     };
 
     public static final String[] OTHER_VANILLA = {
-            "iron", "gold", "copper", "obsidian", "coal"
+            "iron", "gold", "copper", "obsidian", "coal", "netherite"
     };
 
     public static final String[] MODDED_GEMS = {
