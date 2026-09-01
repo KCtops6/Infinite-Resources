@@ -44,15 +44,30 @@ public class ClientColorHandler {
                 event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, ModItems.DOUBLE_PLATES.get(material).get());
             }
         }
+
+        // Standard Storage Block Items
         ModBlocks.STORAGE_BLOCK_ITEMS.forEach((material, itemObj) -> {
             int color = MaterialColors.COLORS.getOrDefault(material, 0xFFFFFF);
-            event.register((stack, tintIndex) -> color, itemObj.get());
+            event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, itemObj.get());
+        });
+
+        // Raw Ore Storage Block Items
+        ModBlocks.RAW_STORAGE_BLOCK_ITEMS.forEach((material, itemObj) -> {
+            int color = MaterialColors.COLORS.getOrDefault(material, 0xFFFFFF);
+            event.register((stack, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, itemObj.get());
         });
     }
 
     @SubscribeEvent
     public static void registerBlockColors(RegisterColorHandlersEvent.Block event) {
+        // Standard Storage Blocks
         ModBlocks.STORAGE_BLOCKS.forEach((material, blockObj) -> {
+            int color = MaterialColors.COLORS.getOrDefault(material, 0xFFFFFF);
+            event.register((state, world, pos, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, blockObj.get());
+        });
+
+        // Raw Ore Storage Blocks
+        ModBlocks.RAW_STORAGE_BLOCKS.forEach((material, blockObj) -> {
             int color = MaterialColors.COLORS.getOrDefault(material, 0xFFFFFF);
             event.register((state, world, pos, tintIndex) -> tintIndex == 0 ? color : 0xFFFFFFFF, blockObj.get());
         });

@@ -402,5 +402,14 @@
   "item.infinite_resources.netherite_rod": "Netherite Rod",
   "item.infinite_resources.netherite_wire": "Netherite Wire",
   "item.infinite_resources.netherite_gear": "Netherite Gear",
-  "item.infinite_resources.double_netherite_plate": "Double Netherite Plate"
+  "item.infinite_resources.double_netherite_plate": "Double Netherite Plate",
+
+  "block.infinite_resources.raw_aluminum_block": "Raw Aluminum Block",
+  "block.infinite_resources.raw_lead_block": "Raw Lead Block",
+  "block.infinite_resources.raw_silver_block": "Raw Silver Block",
+  "block.infinite_resources.raw_osmium_block": "Raw Osmium Block",
+  "block.infinite_resources.raw_nickel_block": "Raw Nickel Block",
+  "block.infinite_resources.raw_uranium_block": "Raw Uranium Block",
+  "block.infinite_resources.raw_tin_block": "Raw Tin Block",
+  "block.infinite_resources.raw_zinc_block": "Raw Zinc Block"
 }

@@ -58,8 +58,13 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.infinite_raw_ores"))
                     .displayItems((parameters, output) -> {
                         for (String material : ModItems.MATERIALS) {
+                            // 1. Add raw ore item (e.g., Raw Tin)
                             if (ModItems.RAW_ORES.containsKey(material)) {
                                 output.accept(ModItems.RAW_ORES.get(material).get());
+                            }
+                            // 2. Add raw ore block item (e.g., Raw Tin Block)
+                            if (ModBlocks.RAW_STORAGE_BLOCK_ITEMS.containsKey(material)) {
+                                output.accept(ModBlocks.RAW_STORAGE_BLOCK_ITEMS.get(material).get());
                             }
                         }
                     }).build());

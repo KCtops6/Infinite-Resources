@@ -10,9 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ModBlocks {
@@ -22,6 +20,9 @@ public class ModBlocks {
     public static final Map<String, RegistryObject<Block>> STORAGE_BLOCKS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> STORAGE_BLOCK_ITEMS = new HashMap<>();
 
+    public static final Map<String, RegistryObject<Block>> RAW_STORAGE_BLOCKS = new HashMap<>();
+    public static final Map<String, RegistryObject<Item>> RAW_STORAGE_BLOCK_ITEMS = new HashMap<>();
+
     // Coal Coke Block
     public static final RegistryObject<Block> COAL_COKE_BLOCK = BLOCKS.register("coal_coke_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.COAL_BLOCK)));
@@ -30,30 +31,39 @@ public class ModBlocks {
             () -> new BlockItem(COAL_COKE_BLOCK.get(), new Item.Properties()));
 
     static {
-        // Register Storage Blocks for Metals and Alloys (Iron Properties)
-        List<String> metalsAndAlloys = new ArrayList<>();
-        metalsAndAlloys.addAll(List.of(ModItems.MODDED_ORES));
-        metalsAndAlloys.addAll(List.of(ModItems.ALLOYS));
-
-        for (String material : metalsAndAlloys) {
+        // 1. Modded Ores (Standard blocks + Raw blocks)
+        for (String material : ModItems.MODDED_ORES) {
+            // Storage Block
             RegistryObject<Block> block = BLOCKS.register(material + "_block",
                     () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
             STORAGE_BLOCKS.put(material, block);
+            STORAGE_BLOCK_ITEMS.put(material, ModItems.ITEMS.register(material + "_block",
+                    () -> new BlockItem(block.get(), new Item.Properties())));
 
-            RegistryObject<Item> blockItem = ModItems.ITEMS.register(material + "_block",
-                    () -> new BlockItem(block.get(), new Item.Properties()));
-            STORAGE_BLOCK_ITEMS.put(material, blockItem);
+            // Raw Ore Block
+            RegistryObject<Block> rawBlock = BLOCKS.register("raw_" + material + "_block",
+                    () -> new Block(BlockBehaviour.Properties.copy(Blocks.RAW_IRON_BLOCK)));
+            RAW_STORAGE_BLOCKS.put(material, rawBlock);
+            RAW_STORAGE_BLOCK_ITEMS.put(material, ModItems.ITEMS.register("raw_" + material + "_block",
+                    () -> new BlockItem(rawBlock.get(), new Item.Properties())));
         }
 
-        // Register Storage Blocks for Gemstones (Diamond Properties)
+        // 2. Alloys
+        for (String material : ModItems.ALLOYS) {
+            RegistryObject<Block> block = BLOCKS.register(material + "_block",
+                    () -> new Block(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
+            STORAGE_BLOCKS.put(material, block);
+            STORAGE_BLOCK_ITEMS.put(material, ModItems.ITEMS.register(material + "_block",
+                    () -> new BlockItem(block.get(), new Item.Properties())));
+        }
+
+        // 3. Modded Gems
         for (String material : ModItems.MODDED_GEMS) {
             RegistryObject<Block> block = BLOCKS.register(material + "_block",
                     () -> new Block(BlockBehaviour.Properties.copy(Blocks.DIAMOND_BLOCK)));
             STORAGE_BLOCKS.put(material, block);
-
-            RegistryObject<Item> blockItem = ModItems.ITEMS.register(material + "_block",
-                    () -> new BlockItem(block.get(), new Item.Properties()));
-            STORAGE_BLOCK_ITEMS.put(material, blockItem);
+            STORAGE_BLOCK_ITEMS.put(material, ModItems.ITEMS.register(material + "_block",
+                    () -> new BlockItem(block.get(), new Item.Properties())));
         }
     }
 
