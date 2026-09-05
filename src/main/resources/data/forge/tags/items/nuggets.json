@@ -1,0 +1,28 @@
+{
+  "replace": false,
+  "values": [
+    "infinite_resources:constantan_nugget",
+    "infinite_resources:brass_nugget",
+    "infinite_resources:steel_nugget",
+    "infinite_resources:bronze_nugget",
+    "infinite_resources:electrum_nugget",
+    "infinite_resources:invar_nugget",
+    "infinite_resources:lead_nugget",
+    "infinite_resources:nickel_nugget",
+    "infinite_resources:silver_nugget",
+    "infinite_resources:tin_nugget",
+    "infinite_resources:zinc_nugget",
+    "infinite_resources:aluminum_nugget",
+    "infinite_resources:iron_nugget",
+    "infinite_resources:gold_nugget",
+    "infinite_resources:diamond_nugget",
+    "infinite_resources:emerald_nugget",
+    "infinite_resources:lapis_nugget",
+    "infinite_resources:copper_nugget",
+    "infinite_resources:osmium_nugget",
+    "infinite_resources:uranium_nugget",
+    "infinite_resources:lumium_nugget",
+    "infinite_resources:enderium_nugget",
+    "infinite_resources:signalum_nugget"
+  ]
+}

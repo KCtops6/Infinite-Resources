@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "infinite_resources:tin_gear",
+    "infinite_resources:lead_gear",
+    "infinite_resources:silver_gear",
+    "infinite_resources:nickel_gear",
+    "infinite_resources:aluminum_gear",
+    "infinite_resources:zinc_gear",
+    "infinite_resources:osmium_gear",
+    "infinite_resources:uranium_gear",
+    "infinite_resources:steel_gear",
+    "infinite_resources:brass_gear",
+    "infinite_resources:bronze_gear",
+    "infinite_resources:invar_gear",
+    "infinite_resources:electrum_gear",
+    "infinite_resources:constantan_gear",
+    "infinite_resources:lumium_gear",
+    "infinite_resources:signalum_gear",
+    "infinite_resources:enderium_gear",
+    "infinite_resources:iron_gear",
+    "infinite_resources:gold_gear",
+    "infinite_resources:copper_gear",
+    "infinite_resources:obsidian_gear",
+    "infinite_resources:diamond_gear",
+    "infinite_resources:lapis_gear",
+    "infinite_resources:emerald_gear",
+    "infinite_resources:netherite_gear"
+  ]
+}

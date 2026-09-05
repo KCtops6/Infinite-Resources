@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "infinite_resources:block/template_block_iron"
+    }
+  }
+}

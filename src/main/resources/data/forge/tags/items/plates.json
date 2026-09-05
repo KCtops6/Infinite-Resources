@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "infinite_resources:constantan_plate",
+    "infinite_resources:brass_plate",
+    "infinite_resources:steel_plate",
+    "infinite_resources:bronze_plate",
+    "infinite_resources:electrum_plate",
+    "infinite_resources:invar_plate",
+    "infinite_resources:lead_plate",
+    "infinite_resources:nickel_plate",
+    "infinite_resources:silver_plate",
+    "infinite_resources:tin_plate",
+    "infinite_resources:zinc_plate",
+    "infinite_resources:aluminum_plate",
+    "infinite_resources:iron_plate",
+    "infinite_resources:gold_plate",
+    "infinite_resources:diamond_plate",
+    "infinite_resources:emerald_plate",
+    "infinite_resources:lapis_plate",
+    "infinite_resources:copper_plate",
+    "infinite_resources:obsidian_plate",
+    "infinite_resources:osmium_plate",
+    "infinite_resources:uranium_plate",
+    "infinite_resources:lumium_plate",
+    "infinite_resources:signalum_plate",
+    "infinite_resources:enderium_plate",
+    "infinite_resources:netherite_plate"
+  ]
+}

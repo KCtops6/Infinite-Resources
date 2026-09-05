@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "infinite_resources:tin_rod",
+    "infinite_resources:lead_rod",
+    "infinite_resources:silver_rod",
+    "infinite_resources:nickel_rod",
+    "infinite_resources:aluminum_rod",
+    "infinite_resources:zinc_rod",
+    "infinite_resources:osmium_rod",
+    "infinite_resources:uranium_rod",
+    "infinite_resources:steel_rod",
+    "infinite_resources:brass_rod",
+    "infinite_resources:bronze_rod",
+    "infinite_resources:invar_rod",
+    "infinite_resources:electrum_rod",
+    "infinite_resources:constantan_rod",
+    "infinite_resources:lumium_rod",
+    "infinite_resources:signalum_rod",
+    "infinite_resources:enderium_rod",
+    "infinite_resources:iron_rod",
+    "infinite_resources:gold_rod",
+    "infinite_resources:copper_rod",
+    "infinite_resources:obsidian_rod",
+    "infinite_resources:netherite_rod"
+  ]
+}
