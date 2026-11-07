@@ -65,10 +65,6 @@ public class MaterialColors {
         COLORS.put("carnelian", 0xFFCC4E25);
     }
 
-    /**
-     * Helper method to safety-check and return material colors.
-     * Automatically applies full opacity if an 24-bit color is requested.
-     */
     public static int getColor(String materialName) {
         int color = COLORS.getOrDefault(materialName, 0xFFFFFFFF);
         if ((color & 0xFF000000) == 0) {
