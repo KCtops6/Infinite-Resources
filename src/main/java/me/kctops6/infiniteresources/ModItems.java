@@ -1,3 +1,4 @@
+// File: ModItems.java
 package me.kctops6.infiniteresources;
 
 import net.minecraft.world.item.Item;
@@ -15,7 +16,6 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, InfiniteResources.MOD_ID);
 
-    // Dynamic Item Maps
     public static final Map<String, RegistryObject<Item>> INGOTS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> NUGGETS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> DUSTS = new HashMap<>();
@@ -27,11 +27,9 @@ public class ModItems {
     public static final Map<String, RegistryObject<Item>> GEARS = new HashMap<>();
     public static final Map<String, RegistryObject<Item>> DOUBLE_PLATES = new HashMap<>();
 
-    // Individual Special Items
     public static final RegistryObject<Item> COAL_COKE = ITEMS.register("coal_coke",
             () -> new Item(new Item.Properties()));
 
-    // Material Definitions
     public static final String[] MODDED_ORES = {
             "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium", "uranium"
     };
@@ -45,7 +43,7 @@ public class ModItems {
     };
 
     public static final String[] OTHER_VANILLA = {
-            "iron", "gold", "copper", "obsidian", "coal", "netherite"
+            "iron", "gold", "copper", "obsidian", "coal", "netherite", "ender_pearl"
     };
 
     public static final String[] MODDED_GEMS = {
@@ -64,7 +62,6 @@ public class ModItems {
         MATERIALS.addAll(List.of(GEMS_WITH_NUGGETS));
         MATERIALS.addAll(List.of(OTHER_VANILLA));
 
-        // 1. Natural Ores
         for (String material : MODDED_ORES) {
             INGOTS.put(material, ITEMS.register(material + "_ingot", () -> new Item(new Item.Properties())));
             NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
@@ -73,7 +70,6 @@ public class ModItems {
             RAW_ORES.put(material, ITEMS.register("raw_" + material, () -> new Item(new Item.Properties())));
         }
 
-        // 2. Crafted Alloys
         for (String material : ALLOYS) {
             INGOTS.put(material, ITEMS.register(material + "_ingot", () -> new Item(new Item.Properties())));
             NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
@@ -81,7 +77,6 @@ public class ModItems {
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
         }
 
-        // 3. Modded Gemstones
         for (String material : MODDED_GEMS) {
             GEMS.put(material, ITEMS.register(material + "_gem", () -> new Item(new Item.Properties())));
             NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
@@ -89,7 +84,6 @@ public class ModItems {
             PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
         }
 
-        // 4. Vanilla Core items
         for (String material : GEMS_WITH_NUGGETS) {
             NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
@@ -98,11 +92,9 @@ public class ModItems {
         }
 
         for (String material : OTHER_VANILLA) {
-            // Coal dust is registered here
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
 
-            // Skip plates and nuggets for coal
-            if (!material.equals("coal")) {
+            if (!material.equals("coal") && !material.equals("ender_pearl")) {
                 PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
             }
             if (material.equals("copper")) {
@@ -110,15 +102,13 @@ public class ModItems {
             }
         }
 
-        // 5. Rods, Wires, Gears, and Double Plates
         List<String> metalMaterials = new ArrayList<>();
         metalMaterials.addAll(List.of(MODDED_ORES));
         metalMaterials.addAll(List.of(ALLOYS));
         metalMaterials.addAll(List.of(OTHER_VANILLA));
 
         for (String material : metalMaterials) {
-            // Skip rods, wires, gears, and double plates for coal
-            if (material.equals("coal")) {
+            if (material.equals("coal") || material.equals("ender_pearl")) {
                 continue;
             }
 

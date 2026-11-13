@@ -411,5 +411,7 @@
   "block.infinite_resources.raw_nickel_block": "Raw Nickel Block",
   "block.infinite_resources.raw_uranium_block": "Raw Uranium Block",
   "block.infinite_resources.raw_tin_block": "Raw Tin Block",
-  "block.infinite_resources.raw_zinc_block": "Raw Zinc Block"
+  "block.infinite_resources.raw_zinc_block": "Raw Zinc Block",
+
+  "item.infinite_resources.ender_pearl_dust": "Ender Pearl Dust"
 }
