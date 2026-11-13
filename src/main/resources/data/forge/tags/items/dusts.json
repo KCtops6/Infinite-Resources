@@ -30,6 +30,7 @@
     "infinite_resources:signalum_dust",
     "infinite_resources:coal_dust",
     "infinite_resources:netherite_dust",
-    "infinite_resources:ender_pearl_dust"
+    "infinite_resources:ender_pearl_dust",
+    "infinite_resources:quartz_dust"
   ]
 }

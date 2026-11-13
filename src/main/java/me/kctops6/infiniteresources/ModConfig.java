@@ -84,8 +84,8 @@ public class ModConfig {
         if (material.equals("iron") || material.equals("gold")) {
             return form.equals("ingot") || form.equals("nugget") || form.equals("raw") || form.equals("gem");
         }
-        if (material.equals("diamond") || material.equals("emerald") || material.equals("lapis")) {
-            return form.equals("ingot") || form.equals("raw") || form.equals("gem");
+        if (material.equals("diamond") || material.equals("emerald") || material.equals("lapis") || material.equals("quartz")) {
+            return form.equals("ingot") || form.equals("raw") || form.equals("gem") || (material.equals("quartz") && form.equals("nugget"));
         }
         return false;
     }

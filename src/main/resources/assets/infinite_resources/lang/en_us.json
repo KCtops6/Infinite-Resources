@@ -413,5 +413,7 @@
   "block.infinite_resources.raw_tin_block": "Raw Tin Block",
   "block.infinite_resources.raw_zinc_block": "Raw Zinc Block",
 
-  "item.infinite_resources.ender_pearl_dust": "Ender Pearl Dust"
+  "item.infinite_resources.ender_pearl_dust": "Ender Pearl Dust",
+
+  "item.infinite_resources.quartz_dust": "Quartz Dust"
 }

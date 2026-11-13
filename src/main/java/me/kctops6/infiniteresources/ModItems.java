@@ -43,7 +43,7 @@ public class ModItems {
     };
 
     public static final String[] OTHER_VANILLA = {
-            "iron", "gold", "copper", "obsidian", "coal", "netherite", "ender_pearl"
+            "iron", "gold", "copper", "obsidian", "coal", "netherite", "ender_pearl", "quartz"
     };
 
     public static final String[] MODDED_GEMS = {
@@ -94,7 +94,7 @@ public class ModItems {
         for (String material : OTHER_VANILLA) {
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
 
-            if (!material.equals("coal") && !material.equals("ender_pearl")) {
+            if (!material.equals("coal") && !material.equals("ender_pearl") && !material.equals("quartz")) {
                 PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
             }
             if (material.equals("copper")) {
@@ -108,7 +108,7 @@ public class ModItems {
         metalMaterials.addAll(List.of(OTHER_VANILLA));
 
         for (String material : metalMaterials) {
-            if (material.equals("coal") || material.equals("ender_pearl")) {
+            if (material.equals("coal") || material.equals("ender_pearl") || material.equals("quartz")) {
                 continue;
             }
 

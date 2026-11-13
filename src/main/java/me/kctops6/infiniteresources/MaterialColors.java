@@ -18,6 +18,7 @@ public class MaterialColors {
         COLORS.put("coal", 0x4A4A4A);
         COLORS.put("netherite", 0x433d40);
         COLORS.put("ender_pearl", 0x2A7C6F);
+        COLORS.put("quartz", 0xEAE5DE);
 
         // Modded Metals & Alloys
         COLORS.put("steel", 0x707070); //
