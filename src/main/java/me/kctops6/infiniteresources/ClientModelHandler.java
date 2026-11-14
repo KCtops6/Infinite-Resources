@@ -153,20 +153,17 @@ public class ClientModelHandler {
         switch (material) {
             case "ruby": case "garnet": case "jasper": case "carnelian": return "emerald";
             case "sapphire": case "aquamarine": case "iolite": return "lapis";
-            case "topaz": case "citrine": case "amber": case "tigerseye": return "quartz";
+            case "topaz": case "citrine": case "amber": case "tigerseye": case "niter": case "sulfur": return "quartz";
             case "amethyst": case "tanzanite": return "amethyst";
             default: return "diamond";
         }
     }
 
     private static boolean isGemstone(String material) {
-        return material.equals("ruby") || material.equals("sapphire") || material.equals("topaz") || material.equals("amethyst") ||
-                material.equals("opal") || material.equals("aquamarine") || material.equals("peridot") || material.equals("garnet") ||
-                material.equals("jade") || material.equals("tourmaline") || material.equals("citrine") || material.equals("tanzanite") ||
-                material.equals("amber") || material.equals("malachite") || material.equals("onyx") || material.equals("jasper") ||
-                material.equals("agate") || material.equals("turquoise") || material.equals("tigerseye") || material.equals("moonstone") ||
-                material.equals("sunstone") || material.equals("morganite") || material.equals("iolite") || material.equals("alexandrite") ||
-                material.equals("carnelian");
+        for (String gem : ModItems.MODDED_GEMS) {
+            if (gem.equals(material)) return true;
+        }
+        return false;
     }
 
     private static String getDefaultMetalBlockStyle(String material) {
@@ -176,7 +173,8 @@ public class ClientModelHandler {
     }
 
     private static String getDefaultGemBlockStyle(String material) {
-        if (material.equals("ruby") || material.equals("garnet") || material.equals("jasper") || material.equals("carnelian")) return "emerald";
+        if (material.equals("ruby") || material.equals("garnet") || material.equals("jasper")
+                || material.equals("carnelian") || material.equals("niter")) return "emerald";
         return "diamond";
     }
 }

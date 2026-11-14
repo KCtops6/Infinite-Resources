@@ -31,6 +31,11 @@
     "infinite_resources:coal_dust",
     "infinite_resources:netherite_dust",
     "infinite_resources:ender_pearl_dust",
-    "infinite_resources:quartz_dust"
+    "infinite_resources:quartz_dust",
+    "infinite_resources:charcoal_dust",
+    "infinite_resources:apatite_dust",
+    "infinite_resources:cinnabar_dust",
+    "infinite_resources:niter_dust",
+    "infinite_resources:sulfur_dust"
   ]
 }

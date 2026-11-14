@@ -415,5 +415,34 @@
 
   "item.infinite_resources.ender_pearl_dust": "Ender Pearl Dust",
 
-  "item.infinite_resources.quartz_dust": "Quartz Dust"
+  "item.infinite_resources.quartz_dust": "Quartz Dust",
+
+  "item.infinite_resources.netherite_nugget": "Netherite Nugget",
+  "item.infinite_resources.charcoal_dust": "Charcoal Dust",
+  "item.infinite_resources.silicon": "Silicon",
+  "block.infinite_resources.osmium_block": "Osmium Block",
+
+  "item.infinite_resources.apatite_gem": "Apatite",
+  "item.infinite_resources.apatite_dust": "Apatite Dust",
+  "item.infinite_resources.apatite_nugget": "Apatite Nugget",
+  "item.infinite_resources.apatite_plate": "Apatite Plate",
+  "block.infinite_resources.apatite_block": "Apatite Block",
+
+  "item.infinite_resources.cinnabar_gem": "Cinnabar",
+  "item.infinite_resources.cinnabar_dust": "Cinnabar Dust",
+  "item.infinite_resources.cinnabar_nugget": "Cinnabar Nugget",
+  "item.infinite_resources.cinnabar_plate": "Cinnabar Plate",
+  "block.infinite_resources.cinnabar_block": "Cinnabar Block",
+
+  "item.infinite_resources.niter_gem": "Niter",
+  "item.infinite_resources.niter_dust": "Niter Dust",
+  "item.infinite_resources.niter_nugget": "Niter Nugget",
+  "item.infinite_resources.niter_plate": "Niter Plate",
+  "block.infinite_resources.niter_block": "Niter Block",
+
+  "item.infinite_resources.sulfur_gem": "Sulfur",
+  "item.infinite_resources.sulfur_dust": "Sulfur Dust",
+  "item.infinite_resources.sulfur_nugget": "Sulfur Nugget",
+  "item.infinite_resources.sulfur_plate": "Sulfur Plate",
+  "block.infinite_resources.sulfur_block": "Sulfur Block"
 }

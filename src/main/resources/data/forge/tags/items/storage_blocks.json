@@ -40,6 +40,11 @@
     "infinite_resources:carnelian_block",
     "infinite_resources:lumium_block",
     "infinite_resources:signalum_block",
-    "infinite_resources:enderium_block"
+    "infinite_resources:enderium_block",
+    "infinite_resources:osmium_block",
+    "infinite_resources:apatite_block",
+    "infinite_resources:cinnabar_block",
+    "infinite_resources:niter_block",
+    "infinite_resources:sulfur_block"
   ]
 }

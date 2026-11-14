@@ -24,6 +24,9 @@ public class ModCreativeModeTabs {
                                 output.accept(ModBlocks.STORAGE_BLOCK_ITEMS.get(material).get());
                             }
                         }
+                        output.accept(ModItems.COAL_COKE.get());
+                        output.accept(ModBlocks.COAL_COKE_BLOCK_ITEM.get());
+                        output.accept(ModItems.SILICON.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> INGOTS_TAB = CREATIVE_MODE_TABS.register("infinite_ingots",

@@ -30,6 +30,9 @@ public class ModItems {
     public static final RegistryObject<Item> COAL_COKE = ITEMS.register("coal_coke",
             () -> new Item(new Item.Properties()));
 
+    public static final RegistryObject<Item> SILICON = ITEMS.register("silicon",
+            () -> new Item(new Item.Properties()));
+
     public static final String[] MODDED_ORES = {
             "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium", "uranium"
     };
@@ -43,14 +46,15 @@ public class ModItems {
     };
 
     public static final String[] OTHER_VANILLA = {
-            "iron", "gold", "copper", "obsidian", "coal", "netherite", "ender_pearl", "quartz"
+            "iron", "gold", "copper", "obsidian", "coal", "charcoal", "netherite", "ender_pearl", "quartz"
     };
 
     public static final String[] MODDED_GEMS = {
             "ruby", "sapphire", "topaz", "opal", "aquamarine",
             "peridot", "garnet", "jade", "tourmaline", "citrine", "tanzanite",
             "amber", "malachite", "onyx", "jasper", "agate", "turquoise",
-            "tigerseye", "moonstone", "sunstone", "morganite", "iolite", "alexandrite", "carnelian"
+            "tigerseye", "moonstone", "sunstone", "morganite", "iolite", "alexandrite", "carnelian",
+            "apatite", "cinnabar", "niter", "sulfur"
     };
 
     public static final List<String> MATERIALS = new ArrayList<>();
@@ -94,10 +98,10 @@ public class ModItems {
         for (String material : OTHER_VANILLA) {
             DUSTS.put(material, ITEMS.register(material + "_dust", () -> new Item(new Item.Properties())));
 
-            if (!material.equals("coal") && !material.equals("ender_pearl") && !material.equals("quartz")) {
+            if (!material.equals("coal") && !material.equals("charcoal") && !material.equals("ender_pearl") && !material.equals("quartz")) {
                 PLATES.put(material, ITEMS.register(material + "_plate", () -> new Item(new Item.Properties())));
             }
-            if (material.equals("copper")) {
+            if (material.equals("copper") || material.equals("netherite")) {
                 NUGGETS.put(material, ITEMS.register(material + "_nugget", () -> new Item(new Item.Properties())));
             }
         }
@@ -108,7 +112,7 @@ public class ModItems {
         metalMaterials.addAll(List.of(OTHER_VANILLA));
 
         for (String material : metalMaterials) {
-            if (material.equals("coal") || material.equals("ender_pearl") || material.equals("quartz")) {
+            if (material.equals("coal") || material.equals("charcoal") || material.equals("ender_pearl") || material.equals("quartz")) {
                 continue;
             }
 

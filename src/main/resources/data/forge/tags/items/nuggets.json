@@ -23,6 +23,7 @@
     "infinite_resources:uranium_nugget",
     "infinite_resources:lumium_nugget",
     "infinite_resources:enderium_nugget",
-    "infinite_resources:signalum_nugget"
+    "infinite_resources:signalum_nugget",
+    "infinite_resources:netherite_nugget"
   ]
 }

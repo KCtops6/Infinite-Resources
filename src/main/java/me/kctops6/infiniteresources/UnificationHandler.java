@@ -56,6 +56,9 @@ public class UnificationHandler {
                 }
             }
         }
+        if (hasTag(originalItem, "forge:silicon")) {
+            return new ItemStack(ModItems.SILICON.get(), originalStack.getCount());
+        }
         return ItemStack.EMPTY;
     }
 

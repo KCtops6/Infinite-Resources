@@ -20,6 +20,12 @@ public class MaterialColors {
         COLORS.put("ender_pearl", 0x2A7C6F);
         COLORS.put("quartz", 0xEAE5DE);
 
+        COLORS.put("charcoal", 0x38322C);
+        COLORS.put("apatite", 0x33B8E5);
+        COLORS.put("cinnabar", 0xD93829);
+        COLORS.put("niter", 0xE6E6E6);
+        COLORS.put("sulfur", 0xE8D843);
+
         // Modded Metals & Alloys
         COLORS.put("steel", 0x707070); //
         COLORS.put("brass", 0xD6B85C); //

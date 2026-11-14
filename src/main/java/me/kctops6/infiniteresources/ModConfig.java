@@ -18,7 +18,6 @@ public class ModConfig {
     static {
         BUILDER.comment("Infinite Resources Configuration Profile").push("materials");
 
-        // Loop including "gem" as a dynamic component item check
         String[] forms = {"gem", "ingot", "nugget", "dust", "plate", "raw"};
 
         for (String material : ModItems.MATERIALS) {
@@ -26,12 +25,16 @@ public class ModConfig {
             for (String form : forms) {
                 if (isVanillaOmitted(material, form)) continue;
 
-                // Strip validation logic rules
                 if (form.equals("raw") && !ModItems.RAW_ORES.containsKey(material)) continue;
                 if (form.equals("gem") && !ModItems.GEMS.containsKey(material)) continue;
                 if (form.equals("ingot") && !ModItems.INGOTS.containsKey(material)) continue;
 
                 if (form.equals("nugget")) {
+                    String compositeKey = material + "_" + form;
+                    boolean defaultVal = !isSulfurNiterApatiteCinnabar(material);
+                    TOGGLES.put(compositeKey, BUILDER
+                            .comment("Enable/Disable " + material + "_nugget")
+                            .define("enable_nugget", defaultVal));
                     NUGGET_STYLES.put(material, BUILDER
                             .comment("Texture style selection for " + material + "_nugget. Options: IRON, GOLD, COPPER")
                             .defineEnum("nugget_texture_style", NuggetStyle.IRON));
@@ -53,9 +56,10 @@ public class ModConfig {
                             .defineEnum("gem_texture_style", getReasonableGemDefault(material)));
                 } else {
                     String compositeKey = material + "_" + form;
+                    boolean defaultVal = !(isSulfurNiterApatiteCinnabar(material) && form.equals("plate"));
                     TOGGLES.put(compositeKey, BUILDER
                             .comment("Enable/Disable " + material + " " + form)
-                            .define("enable_" + form, true));
+                            .define("enable_" + form, defaultVal));
                 }
             }
             BUILDER.pop();
@@ -63,6 +67,10 @@ public class ModConfig {
 
         BUILDER.pop();
         SPEC = BUILDER.build();
+    }
+
+    private static boolean isSulfurNiterApatiteCinnabar(String material) {
+        return material.equals("sulfur") || material.equals("niter") || material.equals("apatite") || material.equals("cinnabar");
     }
 
     private static GemStyle getReasonableGemDefault(String material) {
@@ -76,7 +84,7 @@ public class ModConfig {
             case "amber": case "malachite": case "jasper": case "turquoise": case "tigerseye":
                 return GemStyle.LAPIS;
             default:
-                return GemStyle.DIAMOND; // topaz, garnet, tourmaline, onyx, morganite, carnelian
+                return GemStyle.DIAMOND;
         }
     }
 
@@ -84,8 +92,8 @@ public class ModConfig {
         if (material.equals("iron") || material.equals("gold")) {
             return form.equals("ingot") || form.equals("nugget") || form.equals("raw") || form.equals("gem");
         }
-        if (material.equals("diamond") || material.equals("emerald") || material.equals("lapis") || material.equals("quartz")) {
-            return form.equals("ingot") || form.equals("raw") || form.equals("gem") || (material.equals("quartz") && form.equals("nugget"));
+        if (material.equals("diamond") || material.equals("emerald") || material.equals("lapis") || material.equals("quartz") || material.equals("charcoal")) {
+            return form.equals("ingot") || form.equals("raw") || form.equals("gem") || ((material.equals("quartz") || material.equals("charcoal")) && form.equals("nugget"));
         }
         return false;
     }
@@ -98,7 +106,6 @@ public class ModConfig {
 
     public static boolean isItemEnabled(String material, String form) {
         if (!configLoaded) return true;
-        if (form.equals("nugget") && NUGGET_STYLES.containsKey(material)) return true;
 
         String compositeKey = material + "_" + form;
         if (TOGGLES.containsKey(compositeKey)) {
