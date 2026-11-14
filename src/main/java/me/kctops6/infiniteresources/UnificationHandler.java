@@ -12,8 +12,14 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.tags.ITag;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
 @Mod.EventBusSubscriber(modid = InfiniteResources.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class UnificationHandler {
+
+    private static final Map<String, TagKey<Item>> TAG_KEY_CACHE = new HashMap<>();
 
     @SubscribeEvent
     public static void onItemPickup(EntityItemPickupEvent event) {
@@ -63,20 +69,21 @@ public class UnificationHandler {
     }
 
     private static boolean hasTag(Item item, String tagLocation) {
-        TagKey<Item> tagKey = ItemTags.create(new ResourceLocation(tagLocation));
-        ITag<Item> tag = ForgeRegistries.ITEMS.tags().getTag(tagKey);
+        TagKey<Item> tagKey = TAG_KEY_CACHE.computeIfAbsent(tagLocation,
+                loc -> ItemTags.create(new ResourceLocation(loc)));
+        ITag<Item> tag = Objects.requireNonNull(ForgeRegistries.ITEMS.tags()).getTag(tagKey);
         return !tag.isEmpty() && tag.contains(item);
     }
 
     private static Item getRegistryItem(String material, String form) {
-        switch (form) {
-            case "gem": return ModItems.GEMS.containsKey(material) ? ModItems.GEMS.get(material).get() : null;
-            case "ingot": return ModItems.INGOTS.containsKey(material) ? ModItems.INGOTS.get(material).get() : null;
-            case "nugget": return ModItems.NUGGETS.containsKey(material) ? ModItems.NUGGETS.get(material).get() : null;
-            case "dust": return ModItems.DUSTS.containsKey(material) ? ModItems.DUSTS.get(material).get() : null;
-            case "plate": return ModItems.PLATES.containsKey(material) ? ModItems.PLATES.get(material).get() : null;
-            case "raw": return ModItems.RAW_ORES.containsKey(material) ? ModItems.RAW_ORES.get(material).get() : null;
-            default: return null;
-        }
+        return switch (form) {
+            case "gem" -> ModItems.GEMS.containsKey(material) ? ModItems.GEMS.get(material).get() : null;
+            case "ingot" -> ModItems.INGOTS.containsKey(material) ? ModItems.INGOTS.get(material).get() : null;
+            case "nugget" -> ModItems.NUGGETS.containsKey(material) ? ModItems.NUGGETS.get(material).get() : null;
+            case "dust" -> ModItems.DUSTS.containsKey(material) ? ModItems.DUSTS.get(material).get() : null;
+            case "plate" -> ModItems.PLATES.containsKey(material) ? ModItems.PLATES.get(material).get() : null;
+            case "raw" -> ModItems.RAW_ORES.containsKey(material) ? ModItems.RAW_ORES.get(material).get() : null;
+            default -> null;
+        };
     }
 }
