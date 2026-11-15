@@ -1,11 +1,14 @@
 package me.kctops6.infiniteresources;
 
+import com.mojang.logging.LogUtils;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,15 +16,16 @@ import java.util.List;
 @JeiPlugin
 public class JEIPlugin implements IModPlugin {
 
+    private static final Logger LOGGER = LogUtils.getLogger();
     private static final ResourceLocation PLUGIN_ID = new ResourceLocation(InfiniteResources.MOD_ID, "jei_plugin");
 
     @Override
-    public ResourceLocation getPluginUid() {
+    public @NotNull ResourceLocation getPluginUid() {
         return PLUGIN_ID;
     }
 
     @Override
-    public void registerRecipes(IRecipeRegistration registration) {
+    public void registerRecipes(@NotNull IRecipeRegistration registration) {
         List<ItemStack> itemsToHide = new ArrayList<>();
         String[] forms = {"gem", "ingot", "nugget", "dust", "plate", "raw"};
 
@@ -53,7 +57,7 @@ public class JEIPlugin implements IModPlugin {
 
         if (!itemsToHide.isEmpty()) {
             registration.getIngredientManager().removeIngredientsAtRuntime(VanillaTypes.ITEM_STACK, itemsToHide);
-            System.out.println("[" + InfiniteResources.MOD_ID + "] JEI successfully hid " + itemsToHide.size() + " config-disabled item variants.");
+            LOGGER.info("JEI successfully hid {} config-disabled item variants.", itemsToHide.size());
         }
     }
 }
