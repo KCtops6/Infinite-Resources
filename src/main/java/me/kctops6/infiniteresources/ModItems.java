@@ -34,7 +34,7 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
 
     public static final String[] MODDED_ORES = {
-            "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium", "uranium"
+            "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium", "uranium", "platinum"
     };
 
     public static final String[] ALLOYS = {

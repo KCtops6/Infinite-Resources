@@ -44,6 +44,7 @@ public class MaterialColors {
         COLORS.put("lumium", 0xdcc47d);
         COLORS.put("signalum", 0xae490e);
         COLORS.put("enderium", 0x0c5253);
+        COLORS.put("platinum", 0xE5F1F4);
 
         // Custom Gemstones (Fixes missing colors making gems render white)
         COLORS.put("ruby", 0xE62E4A);
