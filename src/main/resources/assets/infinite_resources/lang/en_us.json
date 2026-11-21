@@ -106,8 +106,6 @@
   "item.infinite_resources.topaz_dust": "Topaz Dust",
   "item.infinite_resources.topaz_plate": "Topaz Plate",
 
-  "item.infinite_resources.amethyst_gem": "Amethyst Gem",
-  "item.infinite_resources.amethyst_nugget": "Amethyst Nugget",
   "item.infinite_resources.amethyst_dust": "Amethyst Dust",
   "item.infinite_resources.amethyst_plate": "Amethyst Plate",
 
@@ -411,5 +409,50 @@
   "block.infinite_resources.raw_nickel_block": "Raw Nickel Block",
   "block.infinite_resources.raw_uranium_block": "Raw Uranium Block",
   "block.infinite_resources.raw_tin_block": "Raw Tin Block",
-  "block.infinite_resources.raw_zinc_block": "Raw Zinc Block"
+  "block.infinite_resources.raw_zinc_block": "Raw Zinc Block",
+
+  "item.infinite_resources.ender_pearl_dust": "Ender Pearl Dust",
+
+  "item.infinite_resources.quartz_dust": "Quartz Dust",
+
+  "item.infinite_resources.netherite_nugget": "Netherite Nugget",
+  "item.infinite_resources.charcoal_dust": "Charcoal Dust",
+  "item.infinite_resources.silicon": "Silicon",
+  "block.infinite_resources.osmium_block": "Osmium Block",
+
+  "item.infinite_resources.apatite_gem": "Apatite",
+  "item.infinite_resources.apatite_dust": "Apatite Dust",
+  "item.infinite_resources.apatite_nugget": "Apatite Nugget",
+  "item.infinite_resources.apatite_plate": "Apatite Plate",
+  "block.infinite_resources.apatite_block": "Apatite Block",
+
+  "item.infinite_resources.cinnabar_gem": "Cinnabar",
+  "item.infinite_resources.cinnabar_dust": "Cinnabar Dust",
+  "item.infinite_resources.cinnabar_nugget": "Cinnabar Nugget",
+  "item.infinite_resources.cinnabar_plate": "Cinnabar Plate",
+  "block.infinite_resources.cinnabar_block": "Cinnabar Block",
+
+  "item.infinite_resources.niter_gem": "Niter",
+  "item.infinite_resources.niter_dust": "Niter Dust",
+  "item.infinite_resources.niter_nugget": "Niter Nugget",
+  "item.infinite_resources.niter_plate": "Niter Plate",
+  "block.infinite_resources.niter_block": "Niter Block",
+
+  "item.infinite_resources.sulfur_gem": "Sulfur",
+  "item.infinite_resources.sulfur_dust": "Sulfur Dust",
+  "item.infinite_resources.sulfur_nugget": "Sulfur Nugget",
+  "item.infinite_resources.sulfur_plate": "Sulfur Plate",
+  "block.infinite_resources.sulfur_block": "Sulfur Block",
+
+  "item.infinite_resources.platinum_ingot": "Platinum Ingot",
+  "item.infinite_resources.platinum_nugget": "Platinum Nugget",
+  "item.infinite_resources.platinum_dust": "Platinum Dust",
+  "item.infinite_resources.platinum_plate": "Platinum Plate",
+  "item.infinite_resources.raw_platinum": "Raw Platinum",
+  "block.infinite_resources.platinum_block": "Platinum Block",
+  "block.infinite_resources.raw_platinum_block": "Raw Platinum Block",
+  "item.infinite_resources.platinum_rod": "Platinum Rod",
+  "item.infinite_resources.platinum_wire": "Platinum Wire",
+  "item.infinite_resources.platinum_gear": "Platinum Gear",
+  "item.infinite_resources.double_platinum_plate": "Double Platinum Plate"
 }

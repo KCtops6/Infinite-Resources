@@ -7,7 +7,6 @@ public class MaterialColors {
     public static final Map<String, Integer> COLORS = new HashMap<>();
 
     static {
-        // Base Vanilla Metals & Items
         COLORS.put("iron", 0xFFD8D8D8);
         COLORS.put("gold", 0xFFFCE244);
         COLORS.put("copper", 0xFFF07500);
@@ -17,8 +16,6 @@ public class MaterialColors {
         COLORS.put("obsidian", 0xFF1E042E);
         COLORS.put("coal", 0xFF4A4A4A);
         COLORS.put("netherite", 0xFF433D40);
-
-        // Modded Metals & Alloys
         COLORS.put("steel", 0xFF707070);
         COLORS.put("brass", 0xFFD6B85C);
         COLORS.put("bronze", 0xFFAD743E);
@@ -36,8 +33,6 @@ public class MaterialColors {
         COLORS.put("lumium", 0xFFDCC47D);
         COLORS.put("signalum", 0xFFAE490E);
         COLORS.put("enderium", 0xFF0C5253);
-
-        // Custom Gemstones
         COLORS.put("ruby", 0xFFE62E4A);
         COLORS.put("sapphire", 0xFF2E5CE6);
         COLORS.put("topaz", 0xFFF29930);
@@ -63,6 +58,14 @@ public class MaterialColors {
         COLORS.put("iolite", 0xFF4D58B3);
         COLORS.put("alexandrite", 0xFF479486);
         COLORS.put("carnelian", 0xFFCC4E25);
+        COLORS.put("ender_pearl", 0xFF2A7C6F);
+        COLORS.put("quartz", 0xFFEAE5DE);
+        COLORS.put("charcoal", 0xFF38322C);
+        COLORS.put("apatite", 0xFF33B8E5);
+        COLORS.put("cinnabar", 0xFFD93829);
+        COLORS.put("niter", 0xFFE6E6E6);
+        COLORS.put("sulfur", 0xFFE8D843);
+        COLORS.put("platinum", 0xFFE5F1F4);
     }
 
     public static int getColor(String materialName) {

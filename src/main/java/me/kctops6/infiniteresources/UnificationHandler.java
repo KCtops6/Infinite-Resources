@@ -56,6 +56,7 @@ public class UnificationHandler {
                 }
             }
         }
+        if (hasTag(originalItem, "c:silicon")) return new ItemStack(ModItems.SILICON.get(), originalStack.getCount());
         return ItemStack.EMPTY;
     }
 

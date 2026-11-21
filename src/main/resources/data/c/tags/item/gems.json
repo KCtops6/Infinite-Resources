@@ -1,0 +1,33 @@
+{
+  "replace": false,
+  "values": [
+    "infinite_resources:agate_gem",
+    "infinite_resources:alexandrite_gem",
+    "infinite_resources:amber_gem",
+    "infinite_resources:apatite_gem",
+    "infinite_resources:aquamarine_gem",
+    "infinite_resources:carnelian_gem",
+    "infinite_resources:cinnabar_gem",
+    "infinite_resources:citrine_gem",
+    "infinite_resources:garnet_gem",
+    "infinite_resources:iolite_gem",
+    "infinite_resources:jade_gem",
+    "infinite_resources:jasper_gem",
+    "infinite_resources:malachite_gem",
+    "infinite_resources:moonstone_gem",
+    "infinite_resources:morganite_gem",
+    "infinite_resources:niter_gem",
+    "infinite_resources:onyx_gem",
+    "infinite_resources:opal_gem",
+    "infinite_resources:peridot_gem",
+    "infinite_resources:ruby_gem",
+    "infinite_resources:sapphire_gem",
+    "infinite_resources:sulfur_gem",
+    "infinite_resources:sunstone_gem",
+    "infinite_resources:tanzanite_gem",
+    "infinite_resources:tigerseye_gem",
+    "infinite_resources:topaz_gem",
+    "infinite_resources:tourmaline_gem",
+    "infinite_resources:turquoise_gem"
+  ]
+}

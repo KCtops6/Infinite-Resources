@@ -28,10 +28,11 @@ public class ModItems {
 
     // Individual Special Items
     public static final DeferredItem<Item> COAL_COKE = ITEMS.registerSimpleItem("coal_coke", new Item.Properties());
+    public static final DeferredItem<Item> SILICON = ITEMS.registerSimpleItem("silicon", new Item.Properties());
 
     // Material Definitions
     public static final String[] MODDED_ORES = {
-            "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium", "uranium"
+            "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium", "uranium", "platinum"
     };
 
     public static final String[] ALLOYS = {
@@ -43,14 +44,15 @@ public class ModItems {
     };
 
     public static final String[] OTHER_VANILLA = {
-            "iron", "gold", "copper", "obsidian", "coal", "netherite"
+            "iron", "gold", "copper", "obsidian", "coal", "charcoal", "netherite", "ender_pearl", "quartz"
     };
 
     public static final String[] MODDED_GEMS = {
             "ruby", "sapphire", "topaz", "opal", "aquamarine",
             "peridot", "garnet", "jade", "tourmaline", "citrine", "tanzanite",
             "amber", "malachite", "onyx", "jasper", "agate", "turquoise",
-            "tigerseye", "moonstone", "sunstone", "morganite", "iolite", "alexandrite", "carnelian"
+            "tigerseye", "moonstone", "sunstone", "morganite", "iolite", "alexandrite", "carnelian",
+            "apatite", "cinnabar", "niter", "sulfur"
     };
 
     public static final List<String> MATERIALS = new ArrayList<>();
@@ -96,30 +98,23 @@ public class ModItems {
         }
 
         for (String material : OTHER_VANILLA) {
-            // Coal dust is registered here
             DUSTS.put(material, ITEMS.registerSimpleItem(material + "_dust", new Item.Properties()));
 
-            // Skip plates and nuggets for coal
-            if (!material.equals("coal")) {
+            if (!material.equals("coal") && !material.equals("charcoal") && !material.equals("ender_pearl") && !material.equals("quartz")) {
                 PLATES.put(material, ITEMS.registerSimpleItem(material + "_plate", new Item.Properties()));
             }
-            if (material.equals("copper")) {
+            if (material.equals("copper") || material.equals("netherite")) {
                 NUGGETS.put(material, ITEMS.registerSimpleItem(material + "_nugget", new Item.Properties()));
             }
         }
 
-        // 5. Rods, Wires, Gears, and Double Plates
         List<String> metalMaterials = new ArrayList<>();
         metalMaterials.addAll(List.of(MODDED_ORES));
         metalMaterials.addAll(List.of(ALLOYS));
         metalMaterials.addAll(List.of(OTHER_VANILLA));
 
         for (String material : metalMaterials) {
-            // Skip rods, wires, gears, and double plates for coal
-            if (material.equals("coal")) {
-                continue;
-            }
-
+            if (material.equals("coal") || material.equals("charcoal") || material.equals("ender_pearl") || material.equals("quartz")) continue;
             RODS.put(material, ITEMS.registerSimpleItem(material + "_rod", new Item.Properties()));
             WIRES.put(material, ITEMS.registerSimpleItem(material + "_wire", new Item.Properties()));
             GEARS.put(material, ITEMS.registerSimpleItem(material + "_gear", new Item.Properties()));

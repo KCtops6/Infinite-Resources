@@ -1,11 +1,12 @@
 {
   "materials": [
-    "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium", "uranium",
+    "tin", "lead", "silver", "nickel", "aluminum", "zinc", "osmium", "uranium", "platinum",
     "steel", "brass", "bronze", "invar", "electrum", "constantan", "lumium", "signalum", "enderium",
     "ruby", "sapphire", "topaz", "opal", "aquamarine", "peridot", "garnet", "jade", "tourmaline",
     "citrine", "tanzanite", "amber", "malachite", "onyx", "jasper", "agate", "turquoise",
     "tigerseye", "moonstone", "sunstone", "morganite", "iolite", "alexandrite", "carnelian",
-    "iron", "gold", "copper", "diamond", "emerald", "lapis", "coal", "obsidian", "netherite"
+    "apatite", "cinnabar", "niter", "sulfur",
+    "iron", "gold", "copper", "diamond", "emerald", "lapis", "coal", "charcoal", "obsidian", "netherite", "ender_pearl", "quartz"
   ],
   "categories": [
     "ingot", "dust", "nugget", "plate", "raw_ore", "rod", "wire", "gear", "double_plate", "gem"

@@ -1,0 +1,4 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": { "layer0": "infinite_resources:item/template_nugget_gold" }
+}
